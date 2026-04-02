@@ -1,559 +1,718 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Primary SEO -->
-  <title>Vastorg — Fine Wine, Delivered to Your Door</title>
-  <meta name="description" content="Vastorg is a curated wine shipping service bringing exceptional wines from the world's best regions directly to you. Join the waitlist for early access." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.vastorg.com/" />
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.vastorg.com/" />
-  <meta property="og:title" content="Vastorg — Fine Wine, Delivered to Your Door" />
-  <meta property="og:description" content="Curated wine shipping bringing exceptional bottles from the world's best regions directly to you. Join the waitlist." />
-  <meta property="og:image" content="https://www.vastorg.com/og-image.jpg" />
-  <meta property="og:site_name" content="Vastorg" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://www.vastorg.com/" />
-  <meta name="twitter:title" content="Vastorg — Fine Wine, Delivered to Your Door" />
-  <meta name="twitter:description" content="Curated wine shipping bringing exceptional bottles from the world's best regions directly to you. Join the waitlist." />
-  <meta name="twitter:image" content="https://www.vastorg.com/og-image.jpg" />
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Vastorg",
-    "url": "https://www.vastorg.com",
-    "description": "Curated wine shipping service delivering exceptional wines from the world's best regions.",
-    "foundingDate": "2026",
-    "sameAs": []
-  }
-  </script>
-
-  <!-- Favicon (inline SVG via data URI) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%237c3aed'/%3E%3Ctext x='16' y='21' font-size='16' text-anchor='middle' fill='white' font-family='serif'%3EV%3C/text%3E%3C/svg%3E" />
-
-  <style>
-    /* ─── Reset & Base ─────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --wine:       #7c1d3f;
-      --wine-dark:  #4e1128;
-      --wine-light: #a83860;
-      --gold:       #c9a84c;
-      --gold-light: #e8d28a;
-      --cream:      #faf7f2;
-      --text:       #1a1a1a;
-      --muted:      #6b6b6b;
-      --border:     #e2d9cc;
-
-      --font-serif: 'Georgia', 'Times New Roman', serif;
-      --font-sans:  system-ui, -apple-system, 'Segoe UI', sans-serif;
-
-      --radius: 6px;
-      --max-w:  960px;
-      --transition: 220ms ease;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--font-sans);
-      background-color: var(--cream);
-      color: var(--text);
-      line-height: 1.6;
-      min-height: 100dvh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    img { max-width: 100%; display: block; }
-    a   { color: inherit; text-decoration: none; }
-
-    /* ─── Layout ────────────────────────────────────────────── */
-    .container {
-      width: min(var(--max-w), 100% - 2rem);
-      margin-inline: auto;
-    }
-
-    /* ─── Header ────────────────────────────────────────────── */
-    header {
-      padding: 1.5rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(250, 247, 242, 0.92);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    header .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-family: var(--font-serif);
-      font-size: 1.6rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      color: var(--wine-dark);
-    }
-
-    .logo span {
-      color: var(--gold);
-    }
-
-    nav a {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--muted);
-      margin-left: 1.75rem;
-      transition: color var(--transition);
-    }
-    nav a:hover { color: var(--wine); }
-
-    /* ─── Hero ──────────────────────────────────────────────── */
-    .hero {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      padding: 5rem 0 4rem;
-    }
-
-    .hero .container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.25rem;
-    }
-
-    .hero-eyebrow::before {
-      content: '';
-      display: block;
-      width: 24px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(2.25rem, 5vw, 3.5rem);
-      line-height: 1.15;
-      color: var(--wine-dark);
-      margin-bottom: 1.25rem;
-    }
-
-    h1 em {
-      font-style: italic;
-      color: var(--wine);
-    }
-
-    .hero-sub {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 42ch;
-      margin-bottom: 2.5rem;
-      line-height: 1.7;
-    }
-
-    /* ─── Email Form ────────────────────────────────────────── */
-    .form-label {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--wine-dark);
-      margin-bottom: 0.6rem;
-    }
-
-    .form-row {
-      display: flex;
-      gap: 0.5rem;
-      max-width: 420px;
-    }
-
-    .form-row input[type="email"] {
-      flex: 1;
-      padding: 0.75rem 1rem;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      font-size: 0.9375rem;
-      background: #fff;
-      color: var(--text);
-      outline: none;
-      transition: border-color var(--transition), box-shadow var(--transition);
-    }
-
-    .form-row input[type="email"]::placeholder { color: #bbb; }
-
-    .form-row input[type="email"]:focus {
-      border-color: var(--wine);
-      box-shadow: 0 0 0 3px rgba(124, 29, 63, 0.12);
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.4rem;
-      background: var(--wine);
-      color: #fff;
-      border: none;
-      border-radius: var(--radius);
-      font-size: 0.875rem;
-      font-weight: 600;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: background var(--transition), transform var(--transition);
-    }
-
-    .btn-primary:hover { background: var(--wine-light); transform: translateY(-1px); }
-    .btn-primary:active { transform: translateY(0); }
-
-    .form-note {
-      margin-top: 0.6rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    /* ─── Hero Visual ───────────────────────────────────────── */
-    .hero-visual {
-      position: relative;
-      display: flex;
-      justify-content: center;
-    }
-
-    .wine-card {
-      background: linear-gradient(145deg, var(--wine-dark), var(--wine));
-      border-radius: 16px;
-      padding: 2.5rem 2rem;
-      color: #fff;
-      width: 280px;
-      box-shadow:
-        0 20px 60px rgba(78, 17, 40, 0.35),
-        0 4px 16px rgba(78, 17, 40, 0.2);
-    }
-
-    .wine-card-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      line-height: 1;
-    }
-
-    .wine-card h2 {
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .wine-card p {
-      font-size: 0.85rem;
-      opacity: 0.78;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-    }
-
-    .wine-card-badge {
-      display: inline-block;
-      background: rgba(201, 168, 76, 0.25);
-      border: 1px solid rgba(201, 168, 76, 0.5);
-      color: var(--gold-light);
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.75rem;
-      border-radius: 20px;
-    }
-
-    .card-float {
-      position: absolute;
-      background: #fff;
-      border-radius: 10px;
-      padding: 0.7rem 1rem;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--wine-dark);
-      white-space: nowrap;
-    }
-
-    .card-float-1 {
-      top: -10px;
-      right: -20px;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .card-float-2 {
-      bottom: 20px;
-      left: -30px;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    /* ─── Features ──────────────────────────────────────────── */
-    .features {
-      padding: 4rem 0;
-      border-top: 1px solid var(--border);
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-
-    .feature {
-      text-align: center;
-      padding: 2rem 1.5rem;
-    }
-
-    .feature-icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .feature h3 {
-      font-family: var(--font-serif);
-      font-size: 1.1rem;
-      color: var(--wine-dark);
-      margin-bottom: 0.5rem;
-    }
-
-    .feature p {
-      font-size: 0.875rem;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    /* ─── Footer ────────────────────────────────────────────── */
-    footer {
-      background: var(--wine-dark);
-      color: rgba(255,255,255,0.65);
-      padding: 2rem 0;
-      margin-top: auto;
-    }
-
-    footer .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .footer-logo {
-      font-family: var(--font-serif);
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #fff;
-    }
-
-    .footer-logo span { color: var(--gold); }
-
-    footer p { font-size: 0.8rem; }
-
-    footer a {
-      color: rgba(255,255,255,0.5);
-      font-size: 0.8rem;
-      transition: color var(--transition);
-    }
-    footer a:hover { color: var(--gold); }
-
-    /* ─── Success State ─────────────────────────────────────── */
-    .success-msg {
-      display: none;
-      align-items: center;
-      gap: 0.5rem;
-      color: #15803d;
-      font-size: 0.875rem;
-      font-weight: 600;
-      margin-top: 0.75rem;
-    }
-
-    /* ─── Responsive ────────────────────────────────────────── */
-    @media (max-width: 720px) {
-      .hero { padding: 3rem 0; }
-
-      .hero .container {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-      }
-
-      .hero-visual { order: -1; }
-
-      .wine-card { width: 240px; }
-      .card-float { display: none; }
-
-      .features-grid {
-        grid-template-columns: 1fr;
-        gap: 0;
-      }
-
-      nav { display: none; }
-
-      footer .container { flex-direction: column; text-align: center; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="European wine freight forwarding — B2B and B2C, producer to consumer. Coming soon.">
+<title>Vastorg — European wine logistics, anywhere, anytime.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/*
+ * ============================================================
+ * VASTORG LANDING PAGE — NOTION SETUP
+ * ============================================================
+ * 1. Go to https://www.notion.so/my-integrations
+ * 2. Create a new integration named "Vastorg Waitlist"
+ * 3. Copy the "Internal Integration Token"
+ * 4. Open your Notion workspace, find the "Vastorg — Waitlist" database
+ *    → click Share → add your integration
+ * 5. Replace YOUR_NOTION_INTEGRATION_TOKEN in the JS below
+ * ============================================================
+ */
+:root {
+  --bg:#080B12; --bg2:#0D1120; --bg3:#141828; --bg4:#1C2240;
+  --gold:#C09040; --gold-l:#DEB86A; --gold-d:rgba(192,144,64,.15); --gold-b:rgba(192,144,64,.28);
+  --cream:#EDE8DF; --cream-d:#8A8070; --cream-dd:rgba(237,232,223,.06);
+  --burg:#6B1A2A; --burg-l:rgba(107,26,42,.25);
+  --green-a:rgba(42,107,58,.2); --green-b:rgba(58,139,78,.4); --green-t:#6BCF87;
+  --red-a:rgba(107,26,42,.25); --red-b:rgba(155,42,62,.45); --red-t:#E07090;
+  --amber-a:rgba(192,144,64,.12); --amber-t:#DEB86A;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:1.1}
+.serif{font-family:'Cormorant Garamond',serif}
+.mono{font-family:'DM Mono',monospace}
+/* Grain */
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:1000;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:.03}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;transition:background .3s,border-color .3s;border-bottom:.5px solid transparent}
+nav.scrolled{background:rgba(8,11,18,.88);border-color:var(--gold-b);backdrop-filter:blur(14px)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:500;letter-spacing:5px;text-transform:uppercase;color:var(--cream)}
+.nav-logo b{color:var(--gold);font-weight:400}
+.nav-r{display:flex;align-items:center;gap:20px}
+.lang-tog{display:flex;align-items:center;gap:2px;background:rgba(255,255,255,.05);border:.5px solid var(--gold-b);border-radius:20px;padding:3px}
+.lb{background:none;border:none;padding:4px 11px;border-radius:16px;cursor:pointer;color:var(--cream-d);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;transition:all .18s}
+.lb.on{background:var(--gold);color:var(--bg);font-weight:500}
+.nav-cta{background:transparent;border:.5px solid var(--gold-b);color:var(--gold);padding:8px 18px;border-radius:4px;font-size:13px;cursor:pointer;transition:all .18s;font-family:'DM Sans',sans-serif}
+.nav-cta:hover{background:var(--gold);color:var(--bg)}
+/* HERO */
+#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:130px 24px 90px;position:relative;overflow:hidden}
+.hero-map{position:absolute;inset:0;opacity:.16;pointer-events:none}
+.h-badge{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:28px;opacity:0;animation:fadeUp .8s .3s forwards}
+.h1{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,9vw,108px);font-weight:300;color:var(--cream);line-height:1.0;max-width:940px;opacity:0;animation:fadeUp .8s .5s forwards}
+.h1 em{font-style:italic;color:var(--gold)}
+.h-tag{font-size:16px;font-weight:300;color:var(--cream-d);margin-top:24px;letter-spacing:.4px;max-width:600px;opacity:0;animation:fadeUp .8s .7s forwards}
+.h-stats{display:flex;align-items:center;gap:36px;margin-top:48px;opacity:0;animation:fadeUp .8s .9s forwards}
+.h-sn{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;color:var(--gold)}
+.h-sl{font-size:10px;color:var(--cream-d);letter-spacing:1.5px;text-transform:uppercase;font-family:'DM Mono',monospace}
+.h-div{width:.5px;height:38px;background:var(--gold-b)}
+.h-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;opacity:0;animation:fadeIn 1s 1.6s forwards}
+.h-scroll-line{width:.5px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollPulse 2.2s infinite}
+.h-scroll-txt{font-size:10px;letter-spacing:2px;color:var(--cream-d);font-family:'DM Mono',monospace;text-transform:uppercase}
+/* SECTIONS */
+section{padding:100px 24px}
+.inner{max-width:1100px;margin:0 auto}
+.s-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.s-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,56px);font-weight:400;color:var(--cream);margin-bottom:14px;line-height:1.1}
+.s-title em{font-style:italic;color:var(--gold)}
+.s-sub{font-size:14px;color:var(--cream-d);font-weight:300;line-height:1.65;max-width:540px}
+/* WHY */
+#why{border-top:.5px solid var(--gold-d)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:60px;border:.5px solid var(--gold-b);border-radius:12px;overflow:hidden}
+.why-item{background:var(--bg2);padding:40px 30px;border-right:.5px solid var(--gold-b);transition:background .2s}
+.why-item:last-child{border-right:none}
+.why-item:hover{background:var(--bg3)}
+.why-n{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--gold);opacity:.35;line-height:1;margin-bottom:14px}
+.why-t{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--cream);margin-bottom:8px}
+.why-d{font-size:13px;color:var(--cream-d);line-height:1.65;font-weight:300}
+/* TOOL */
+#tool{background:var(--bg2);border-top:.5px solid var(--gold-d);border-bottom:.5px solid var(--gold-d)}
+.tool-hd{margin-bottom:36px}
+/* DECISION TREE */
+.dt-wrap{background:var(--bg3);border:.5px solid var(--gold-b);border-radius:16px;padding:32px;overflow:hidden}
+.dt-trail{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:1.25rem;min-height:24px}
+.dt-crumb{font-family:'DM Mono',monospace;font-size:10px;color:var(--cream-d);background:rgba(255,255,255,.05);padding:3px 10px;border-radius:20px}
+.dt-sep{color:var(--gold-b);font-size:12px}
+.dt-step{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.dt-q{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:var(--cream);margin-bottom:4px}
+.dt-qs{font-size:13px;color:var(--cream-d);margin-bottom:1.5rem;font-weight:300}
+.dt-opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin-bottom:1rem}
+.dt-opt{background:rgba(255,255,255,.025);border:.5px solid var(--gold-b);border-radius:12px;padding:16px 18px;cursor:pointer;transition:all .15s;text-align:left;border-left:3px solid transparent}
+.dt-opt:hover{background:var(--amber-a);border-color:var(--gold);border-left-color:var(--gold)}
+.dt-opt-code{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--gold);background:var(--amber-a);padding:2px 8px;border-radius:10px;display:inline-block;margin-bottom:8px}
+.dt-opt-label{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--cream);margin-bottom:3px}
+.dt-opt-desc{font-size:12px;color:var(--cream-d);line-height:1.4;font-weight:300}
+.dt-nav{display:flex;align-items:center;gap:10px;margin-top:.75rem}
+.dt-back{background:none;border:.5px solid var(--gold-b);color:var(--cream-d);border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px;font-family:'DM Sans',sans-serif;transition:all .15s}
+.dt-back:hover{border-color:var(--gold);color:var(--cream)}
+.dt-rstbtn{background:none;border:none;color:var(--cream-d);font-size:12px;cursor:pointer;text-decoration:underline;font-family:'DM Sans',sans-serif}
+/* result */
+.dt-result{animation:fadeUp .22s ease}
+.res-hd{background:var(--amber-a);border:.5px solid var(--gold-b);border-radius:10px;padding:16px 20px;margin-bottom:14px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.res-title{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--cream)}
+.res-route{font-size:11px;color:var(--cream-d);margin-top:2px;font-family:'DM Mono',monospace}
+.cx{font-family:'DM Mono',monospace;font-size:10px;padding:3px 10px;border-radius:10px;white-space:nowrap;letter-spacing:.5px}
+.cx-l{background:var(--green-a);color:var(--green-t)}
+.cx-m{background:var(--amber-a);color:var(--amber-t)}
+.cx-h{background:var(--red-a);color:var(--red-t)}
+.cx-v{background:rgba(107,26,42,.4);color:#F09090}
+.cb{border-radius:10px;padding:11px 15px;margin-bottom:14px;display:flex;align-items:flex-start;gap:10px}
+.cb-y{background:var(--green-a);border:.5px solid var(--green-b)}
+.cb-n{background:var(--red-a);border:.5px solid var(--red-b)}
+.cb-p{background:var(--amber-a);border:.5px solid var(--gold-b)}
+.cb-icon{font-size:15px;flex-shrink:0;line-height:1.6;font-family:'DM Mono',monospace}
+.cb-lbl{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.7px;margin-bottom:3px}
+.cb-y .cb-lbl{color:var(--green-t)}.cb-n .cb-lbl{color:var(--red-t)}.cb-p .cb-lbl{color:var(--amber-t)}
+.cb-note{font-size:12px;color:var(--cream-d);line-height:1.4}
+.ds{background:rgba(255,255,255,.03);border:.5px solid var(--gold-b);border-radius:8px;padding:10px 14px;margin-bottom:10px}
+.ds-l{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--cream-d);margin-bottom:3px}
+.ds-v{font-size:13px;font-weight:500;color:var(--cream)}
+.doc-sec{margin-bottom:13px}
+.doc-sec-lbl{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.8px;text-transform:uppercase;color:var(--cream-d);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.doc-sec-lbl::after{content:'';flex:1;height:.5px;background:var(--gold-d)}
+.doc-item{background:rgba(255,255,255,.02);border:.5px solid rgba(255,255,255,.07);border-radius:8px;padding:10px 14px;margin-bottom:6px;display:flex;gap:10px;align-items:flex-start}
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.dot-m{background:var(--gold)}.dot-c{background:#BA7517}.dot-p{background:#2A8A4A}
+.doc-nm{font-size:12px;font-weight:500;color:var(--cream)}
+.doc-pl{font-size:10px;color:var(--gold);margin-top:1px;font-family:'DM Mono',monospace}
+.doc-nt{font-size:11px;color:var(--cream-d);margin-top:3px;line-height:1.4}
+.doc-cond{font-size:10px;color:var(--amber-t);background:var(--amber-a);padding:1px 6px;border-radius:8px;display:inline-block;margin-bottom:2px}
+.warn-box{background:var(--burg-l);border:.5px solid var(--red-b);border-radius:8px;padding:12px 16px;margin-bottom:12px}
+.warn-t{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.7px;color:var(--red-t);margin-bottom:6px}
+.warn-i{font-size:12px;color:rgba(230,180,180,.8);line-height:1.5;margin-bottom:3px;display:flex;gap:6px}
+.portal-strip{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.portal-pill{font-family:'DM Mono',monospace;font-size:10px;background:var(--amber-a);color:var(--gold);padding:3px 10px;border-radius:12px;border:.5px solid var(--gold-b)}
+.lrl{background:rgba(255,255,255,.02);border:.5px solid rgba(255,255,255,.07);border-radius:8px;padding:10px 14px}
+.lri{font-size:12px;color:var(--cream-d);line-height:1.5;margin-bottom:3px;padding-left:12px;position:relative}
+.lri::before{content:'';position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:.5}
+/* WAITLIST */
+#waitlist{border-top:.5px solid var(--gold-d)}
+.wl-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:60px}
+.wl-proms{margin-top:28px;display:flex;flex-direction:column;gap:13px}
+.wl-prom{display:flex;gap:12px;align-items:flex-start}
+.wl-prom-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:7px}
+.wl-prom-txt{font-size:14px;color:var(--cream-d);font-weight:300}
+.wl-count{margin-top:40px;padding-top:32px;border-top:.5px solid var(--gold-d)}
+.wl-count-n{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--gold)}
+.wl-count-l{font-size:11px;color:var(--cream-d);font-family:'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase}
+/* Form */
+.f-row{margin-bottom:20px}
+.f-lbl{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--cream-d);display:block;margin-bottom:7px}
+.f-in,.f-sel,.f-ta{width:100%;background:rgba(255,255,255,.04);border:.5px solid rgba(255,255,255,.12);border-radius:6px;padding:12px 14px;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;transition:border-color .18s}
+.f-in:focus,.f-sel:focus,.f-ta:focus{border-color:var(--gold)}
+.f-in::placeholder,.f-ta::placeholder{color:rgba(237,232,223,.25)}
+.f-sel{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A8070' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.f-sel option{background:#141828}
+.f-ta{resize:vertical;min-height:80px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.wl-btn{width:100%;background:var(--gold);border:none;border-radius:6px;padding:15px 24px;color:var(--bg);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:all .18s;margin-top:8px;letter-spacing:.5px}
+.wl-btn:hover:not(:disabled){background:var(--gold-l)}
+.wl-btn:disabled{opacity:.55;cursor:not-allowed}
+.f-err{font-size:12px;color:var(--red-t);margin-top:4px;font-family:'DM Mono',monospace;display:none}
+.f-ok{background:var(--green-a);border:.5px solid var(--green-b);border-radius:12px;padding:40px 32px;text-align:center}
+.f-ok-title{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--cream);margin-bottom:8px}
+.f-ok-sub{font-size:14px;color:var(--cream-d)}
+/* FOOTER */
+footer{border-top:.5px solid var(--gold-d);padding:36px 40px}
+.foot-in{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.foot-logo{font-family:'Cormorant Garamond',serif;font-size:17px;letter-spacing:4px;text-transform:uppercase;color:var(--cream);opacity:.5}
+.foot-note{font-size:11px;color:var(--cream-d);font-family:'DM Mono',monospace}
+/* ANIMATE */
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:.75}}
+@keyframes scrollPulse{0%,100%{opacity:.3;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.08)}}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+.reveal.vis{opacity:1;transform:none}
+/* RESPONSIVE */
+@media(max-width:880px){
+  nav{padding:14px 20px}.nav-cta{display:none}
+  .why-grid{grid-template-columns:1fr}
+  .why-item{border-right:none;border-bottom:.5px solid var(--gold-b)}
+  .why-item:last-child{border-bottom:none}
+  .wl-grid{grid-template-columns:1fr;gap:48px}
+  .f2{grid-template-columns:1fr}
+  .dt-opts{grid-template-columns:1fr}
+  .h-stats{gap:20px}
+  footer{padding:28px 20px}
+}
+</style>
 </head>
-
 <body>
 
-  <!-- ─── Header ─────────────────────────────────────────── -->
-  <header>
-    <div class="container">
-      <a href="/" class="logo" aria-label="Vastorg Home">Vast<span>org</span></a>
-      <nav aria-label="Primary navigation">
-        <a href="#about">About</a>
-        <a href="#waitlist">Join Waitlist</a>
-      </nav>
+<nav id="nav">
+  <div class="nav-logo">V<b>·</b>ASTORG</div>
+  <div class="nav-r">
+    <div class="lang-tog">
+      <button class="lb on" onclick="setLang('en')" id="btn-en">EN</button>
+      <button class="lb" onclick="setLang('fr')" id="btn-fr">FR</button>
     </div>
-  </header>
+    <button class="nav-cta" onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'})" data-en="Join the waitlist" data-fr="Rejoindre la liste">Join the waitlist</button>
+  </div>
+</nav>
 
-  <!-- ─── Hero ───────────────────────────────────────────── -->
-  <main>
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="container">
-        <div class="hero-content">
-          <p class="hero-eyebrow" aria-hidden="true">Coming Soon</p>
+<section id="hero">
+  <svg class="hero-map" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <pattern id="g" width="80" height="80" patternUnits="userSpaceOnUse">
+        <path d="M80 0L0 0 0 80" fill="none" stroke="rgba(192,144,64,0.14)" stroke-width=".5"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#g)"/>
+    <circle cx="405" cy="268" r="4" fill="#C09040" opacity=".9"><animate attributeName="r" values="4;6;4" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="432" cy="252" r="3" fill="#C09040" opacity=".7"><animate attributeName="r" values="3;5;3" dur="3.5s" repeatCount="indefinite" begin=".5s"/></circle>
+    <circle cx="396" cy="242" r="3" fill="#C09040" opacity=".65"><animate attributeName="r" values="3;4;3" dur="2.8s" repeatCount="indefinite" begin="1s"/></circle>
+    <circle cx="373" cy="258" r="2.5" fill="#C09040" opacity=".6"><animate attributeName="r" values="2.5;4;2.5" dur="4s" repeatCount="indefinite" begin=".3s"/></circle>
+    <circle cx="460" cy="245" r="2.5" fill="#C09040" opacity=".6"><animate attributeName="r" values="2.5;4;2.5" dur="3.2s" repeatCount="indefinite" begin=".8s"/></circle>
+    <circle cx="196" cy="228" r="3" fill="#EDE8DF" opacity=".45"><animate attributeName="opacity" values=".45;.85;.45" dur="4s" repeatCount="indefinite"/></circle>
+    <circle cx="377" cy="185" r="3" fill="#EDE8DF" opacity=".45"><animate attributeName="opacity" values=".45;.85;.45" dur="3.5s" repeatCount="indefinite" begin=".5s"/></circle>
+    <circle cx="893" cy="255" r="3" fill="#EDE8DF" opacity=".4"><animate attributeName="opacity" values=".4;.8;.4" dur="3.8s" repeatCount="indefinite" begin="1s"/></circle>
+    <circle cx="998" cy="342" r="3" fill="#EDE8DF" opacity=".35"><animate attributeName="opacity" values=".35;.75;.35" dur="4.2s" repeatCount="indefinite" begin=".3s"/></circle>
+    <circle cx="222" cy="198" r="3" fill="#EDE8DF" opacity=".45"><animate attributeName="opacity" values=".45;.85;.45" dur="3.3s" repeatCount="indefinite" begin="1.2s"/></circle>
+    <circle cx="478" cy="235" r="3" fill="#EDE8DF" opacity=".45"><animate attributeName="opacity" values=".45;.85;.45" dur="3.6s" repeatCount="indefinite" begin=".7s"/></circle>
+    <path d="M405,268 Q305,185 196,228" fill="none" stroke="#C09040" stroke-width=".8" opacity=".32" stroke-dasharray="280" stroke-dashoffset="280"><animate attributeName="stroke-dashoffset" from="280" to="0" dur="2s" fill="freeze" begin=".5s"/></path>
+    <path d="M405,268 Q395,222 377,185" fill="none" stroke="#C09040" stroke-width=".8" opacity=".32" stroke-dasharray="100" stroke-dashoffset="100"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="1s" fill="freeze" begin=".8s"/></path>
+    <path d="M405,268 Q440,250 478,235" fill="none" stroke="#C09040" stroke-width=".8" opacity=".35" stroke-dasharray="80" stroke-dashoffset="80"><animate attributeName="stroke-dashoffset" from="80" to="0" dur=".8s" fill="freeze" begin="1s"/></path>
+    <path d="M405,268 Q320,235 222,198" fill="none" stroke="#C09040" stroke-width=".8" opacity=".28" stroke-dasharray="196" stroke-dashoffset="196"><animate attributeName="stroke-dashoffset" from="196" to="0" dur="1.5s" fill="freeze" begin=".6s"/></path>
+    <path d="M405,268 Q640,195 893,255" fill="none" stroke="#C09040" stroke-width=".8" opacity=".2" stroke-dasharray="508" stroke-dashoffset="508"><animate attributeName="stroke-dashoffset" from="508" to="0" dur="2.5s" fill="freeze" begin="1.2s"/></path>
+    <path d="M405,268 Q695,178 998,342" fill="none" stroke="#C09040" stroke-width=".8" opacity=".16" stroke-dasharray="640" stroke-dashoffset="640"><animate attributeName="stroke-dashoffset" from="640" to="0" dur="3s" fill="freeze" begin="1.5s"/></path>
+  </svg>
 
-          <h1 id="hero-heading">
-            <em>Fine wine,</em><br />
-            shipped to your door.
-          </h1>
+  <div class="h-badge" data-en="Coming soon" data-fr="Bientôt disponible">Coming soon</div>
+  <h1 class="h1" id="h1">European <em>wine</em> logistics,<br>anywhere, anytime.</h1>
+  <p class="h-tag" id="h-tag" data-en="Freight forwarding for wine producers, négociants and importers — from France to the world." data-fr="Commissionnaire de transport pour vignerons, négociants et importateurs — de la France au monde entier.">Freight forwarding for wine producers, négociants and importers — from France to the world.</p>
+  <div class="h-stats">
+    <div>
+      <div class="h-sn">10</div>
+      <div class="h-sl" data-en="key markets" data-fr="marchés clés">key markets</div>
+    </div>
+    <div class="h-div"></div>
+    <div>
+      <div class="h-sn">B2B</div>
+      <div class="h-sl" data-en="& B2C" data-fr="& B2C">& B2C</div>
+    </div>
+    <div class="h-div"></div>
+    <div>
+      <div class="h-sn">100%</div>
+      <div class="h-sl" data-en="wine specialist" data-fr="spécialiste vin">wine specialist</div>
+    </div>
+  </div>
+  <div class="h-scroll" onclick="document.getElementById('why').scrollIntoView({behavior:'smooth'})">
+    <div class="h-scroll-line"></div>
+    <div class="h-scroll-txt" data-en="scroll" data-fr="défiler">scroll</div>
+  </div>
+</section>
 
-          <p class="hero-sub">
-            Vastorg curates exceptional wines from the world's most celebrated regions and delivers them directly to you — no guesswork, just great bottles.
-          </p>
+<section id="why">
+  <div class="inner">
+    <div class="reveal">
+      <div class="s-label" data-en="Why Vastorg" data-fr="Pourquoi Vastorg">Why Vastorg</div>
+      <h2 class="s-title" data-en-html="Built for <em>wine.</em><br>Designed for the world." data-fr-html="Conçu pour le <em>vin.</em><br>Pensé pour le monde.">Built for <em>wine.</em><br>Designed for the world.</h2>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-item">
+        <div class="why-n">01</div>
+        <div class="why-t" data-en="Expert documentation" data-fr="Documentation experte">Expert documentation</div>
+        <p class="why-d" data-en="From GAMMA2 DAE to FDA Prior Notice — we handle every document for every corridor, from France to your market." data-fr="Du DAE GAMMA2 au Prior Notice FDA — nous gérons chaque document pour chaque corridor, de la France à votre marché.">From GAMMA2 DAE to FDA Prior Notice — we handle every document for every corridor, from France to your market.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-n">02</div>
+        <div class="why-t" data-en="Franco-Swiss expertise" data-fr="Expertise franco-suisse">Franco-Swiss expertise</div>
+        <p class="why-d" data-en="Born at the crossroads of Europe's wine heartland. We know Bordeaux, Burgundy, and Basel equally well." data-fr="Né au carrefour du cœur viticole de l'Europe. Bordeaux, la Bourgogne, Bâle — nous les connaissons tous.">Born at the crossroads of Europe's wine heartland. We know Bordeaux, Burgundy, and Basel equally well.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-n">03</div>
+        <div class="why-t" data-en="End-to-end logistics" data-fr="Logistique bout en bout">End-to-end logistics</div>
+        <p class="why-d" data-en="Producer to importer. B2B to direct-to-consumer. Bonded warehousing. Temperature controlled. We handle it all." data-fr="Du producteur à l'importateur. B2B comme DTC. Entreposage sous douane. Chaîne du froid. Tout.">Producer to importer. B2B to direct-to-consumer. Bonded warehousing. Temperature controlled. We handle it all.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-          <div id="waitlist">
-            <label class="form-label" for="email-input">Be the first to know</label>
-            <form class="form-row" id="waitlist-form" novalidate>
-              <input
-                type="email"
-                id="email-input"
-                name="email"
-                placeholder="your@email.com"
-                autocomplete="email"
-                required
-                aria-required="true"
-                aria-describedby="form-note"
-              />
-              <button type="submit" class="btn-primary">
-                Join Waitlist
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </button>
-            </form>
-            <p class="form-note" id="form-note">No spam. Unsubscribe any time.</p>
-            <p class="success-msg" id="success-msg" role="status" aria-live="polite">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-              You're on the list — we'll be in touch!
-            </p>
-          </div>
+<section id="tool">
+  <div class="inner">
+    <div class="tool-hd reveal">
+      <div class="s-label" data-en="Free shipping guide" data-fr="Guide d'expédition gratuit">Free shipping guide</div>
+      <h2 class="s-title" data-en-html="Not sure what<br>documents you need?" data-fr-html="Vous ne savez pas quels<br>documents sont nécessaires ?">Not sure what<br>documents you need?</h2>
+      <p class="s-sub" data-en="Select your route and shipment type. We'll show you exactly which French customs documents, excise procedures, and destination requirements apply." data-fr="Sélectionnez votre corridor et votre type d'expédition. Nous vous indiquons exactement les documents douaniers, procédures d'accise et exigences à destination.">Select your route and shipment type. We'll show you exactly which French customs documents, excise procedures, and destination requirements apply.</p>
+    </div>
+    <div class="dt-wrap reveal" id="dt">
+      <div class="dt-trail" id="dt-trail"></div>
+      <div id="dt-main"></div>
+    </div>
+  </div>
+</section>
+
+<section id="waitlist">
+  <div class="inner">
+    <div class="reveal" style="text-align:center">
+      <div class="s-label" data-en="Early access" data-fr="Accès anticipé">Early access</div>
+      <h2 class="s-title" style="margin:0 auto" data-en-html="Be first to ship<br>with <em>Vastorg.</em>" data-fr-html="Soyez parmi les premiers<br>à expédier avec <em>Vastorg.</em>">Be first to ship<br>with <em>Vastorg.</em></h2>
+    </div>
+    <div class="wl-grid">
+      <div class="reveal">
+        <p class="s-sub" style="max-width:none" data-en="We're launching soon with a select group of wine producers, négociants, and importers. Join the list to get early access and dedicated onboarding." data-fr="Nous lançons bientôt avec un groupe sélectionné de vignerons, négociants et importateurs. Rejoignez la liste pour un accès prioritaire et un onboarding dédié.">We're launching soon with a select group of wine producers, négociants, and importers. Join the list to get early access and dedicated onboarding.</p>
+        <div class="wl-proms">
+          <div class="wl-prom"><div class="wl-prom-dot"></div><div class="wl-prom-txt" data-en="Priority access before public launch" data-fr="Accès prioritaire avant le lancement public">Priority access before public launch</div></div>
+          <div class="wl-prom"><div class="wl-prom-dot"></div><div class="wl-prom-txt" data-en="Dedicated onboarding with our team" data-fr="Onboarding dédié avec notre équipe">Dedicated onboarding with our team</div></div>
+          <div class="wl-prom"><div class="wl-prom-dot"></div><div class="wl-prom-txt" data-en="Preferential launch pricing" data-fr="Tarifs préférentiels au lancement">Preferential launch pricing</div></div>
+          <div class="wl-prom"><div class="wl-prom-dot"></div><div class="wl-prom-txt" data-en="Direct input on routes and features" data-fr="Contribution directe aux corridors et fonctionnalités">Direct input on routes and features</div></div>
         </div>
-
-        <!-- Decorative card -->
-        <div class="hero-visual" aria-hidden="true">
-          <div class="wine-card">
-            <div class="wine-card-icon">🍷</div>
-            <h2>Curated Selection</h2>
-            <p>Hand-picked bottles from Bordeaux, Burgundy, Rioja, Napa, and beyond.</p>
-            <span class="wine-card-badge">Launching Soon</span>
-          </div>
-          <div class="card-float card-float-1">
-            🌍 &nbsp;World-class regions
-          </div>
-          <div class="card-float card-float-2">
-            📦 &nbsp;Delivered with care
-          </div>
+        <div class="wl-count">
+          <div class="wl-count-n" id="wl-n">—</div>
+          <div class="wl-count-l" data-en="on the waitlist" data-fr="sur la liste d'attente">on the waitlist</div>
         </div>
       </div>
-    </section>
-
-    <!-- ─── Features ─────────────────────────────────────── -->
-    <section class="features" id="about" aria-labelledby="features-heading">
-      <div class="container">
-        <div class="features-grid">
-          <article class="feature">
-            <div class="feature-icon" aria-hidden="true">🍇</div>
-            <h3>Expert Curation</h3>
-            <p>Every bottle is selected by sommeliers who know what makes a wine truly exceptional — terroir, vintage, and craft.</p>
-          </article>
-          <article class="feature">
-            <div class="feature-icon" aria-hidden="true">🌡️</div>
-            <h3>Temperature-Controlled</h3>
-            <p>Your wine travels in climate-controlled packaging to arrive in perfect condition, every single time.</p>
-          </article>
-          <article class="feature">
-            <div class="feature-icon" aria-hidden="true">✈️</div>
-            <h3>Global Reach</h3>
-            <p>From small-batch producers to storied estates — we source from regions most retailers never reach.</p>
-          </article>
-        </div>
+      <div class="reveal" id="form-area">
+        <form id="wl-form" onsubmit="submitWL(event)">
+          <div class="f2">
+            <div class="f-row">
+              <label class="f-lbl" data-en="Full name *" data-fr="Nom complet *">Full name *</label>
+              <input class="f-in" type="text" id="f-name" required placeholder="Joseph Abisaleh">
+            </div>
+            <div class="f-row">
+              <label class="f-lbl" data-en="Email *" data-fr="Email *">Email *</label>
+              <input class="f-in" type="email" id="f-email" required placeholder="joseph@domaine.com">
+            </div>
+          </div>
+          <div class="f2">
+            <div class="f-row">
+              <label class="f-lbl" data-en="Company" data-fr="Société">Company</label>
+              <input class="f-in" type="text" id="f-co" placeholder="Château X">
+            </div>
+            <div class="f-row">
+              <label class="f-lbl" data-en="Country" data-fr="Pays">Country</label>
+              <input class="f-in" type="text" id="f-ctry" placeholder="France">
+            </div>
+          </div>
+          <div class="f-row">
+            <label class="f-lbl" data-en="Your role" data-fr="Votre rôle">Your role</label>
+            <select class="f-sel" id="f-role">
+              <option value="" data-en="Select…" data-fr="Sélectionner…">Select…</option>
+              <option value="Producteur / Winery" data-en="Producer / Winery" data-fr="Producteur / Vigneron">Producer / Winery</option>
+              <option value="Négociant / Trader" data-en="Négociant / Trader" data-fr="Négociant">Négociant / Trader</option>
+              <option value="Importateur / Importer" data-en="Importer" data-fr="Importateur">Importer</option>
+              <option value="Distributeur / Distributor" data-en="Distributor" data-fr="Distributeur">Distributor</option>
+              <option value="Autre / Other" data-en="Other" data-fr="Autre">Other</option>
+            </select>
+          </div>
+          <div class="f-row">
+            <label class="f-lbl" data-en="Message (optional)" data-fr="Message (optionnel)">Message (optional)</label>
+            <textarea class="f-ta" id="f-msg" rows="3" placeholder="Which routes matter most to you? / Quels corridors vous intéressent le plus ?"></textarea>
+          </div>
+          <div class="f-err" id="f-err"></div>
+          <button class="wl-btn" type="submit" id="wl-btn">
+            <span id="btn-txt" data-en="Join the waitlist" data-fr="Rejoindre la liste d'attente">Join the waitlist</span>
+          </button>
+        </form>
       </div>
-    </section>
-  </main>
-
-  <!-- ─── Footer ─────────────────────────────────────────── -->
-  <footer>
-    <div class="container">
-      <span class="footer-logo">Vast<span>org</span></span>
-      <p>&copy; <span id="year"></span> Vastorg. All rights reserved.</p>
-      <nav aria-label="Footer navigation">
-        <a href="mailto:hello@vastorg.com">hello@vastorg.com</a>
-      </nav>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
+<footer>
+  <div class="foot-in">
+    <div class="foot-logo">V · A · S · T · O · R · G</div>
+    <div class="foot-note" id="foot-yr"></div>
+  </div>
+</footer>
 
-    // Waitlist form — swap out for a real backend / Formspree / etc.
-    document.getElementById('waitlist-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const email = document.getElementById('email-input').value.trim();
-      if (!email) return;
+<script>
+/* ========================================================
+   CONFIGURATION — replace with your Notion integration token
+   See comments at top of <style> for setup instructions
+   ======================================================== */
+const NOTION_TOKEN = 'YOUR_NOTION_INTEGRATION_TOKEN';
+const NOTION_DB    = '592a12b8ba78475b95c9298f33f6b588';
 
-      // TODO: POST email to your backend or a service like Formspree
-      // fetch('https://formspree.io/f/YOUR_ID', { method:'POST', body: JSON.stringify({email}), headers:{'Content-Type':'application/json'} })
+/* ── Language ─────────────────────────────────── */
+let lang = 'en';
+function setLang(l) {
+  lang = l;
+  document.getElementById('btn-en').classList.toggle('on', l==='en');
+  document.getElementById('btn-fr').classList.toggle('on', l==='fr');
+  document.documentElement.lang = l;
+  document.querySelectorAll('[data-en],[data-fr]').forEach(el => {
+    const v = el.getAttribute('data-'+l);
+    if (v) el.textContent = v;
+  });
+  document.querySelectorAll('[data-en-html],[data-fr-html]').forEach(el => {
+    const v = el.getAttribute('data-'+l+'-html');
+    if (v) el.innerHTML = v;
+  });
+  document.getElementById('h1').innerHTML = l==='en'
+    ? 'European <em>wine</em> logistics,<br>anywhere, anytime.'
+    : 'La logistique du <em>vin</em> européen,<br>partout, tout le temps.';
+  if(window._dtRender) window._dtRender();
+}
 
-      this.style.display = 'none';
-      document.getElementById('form-note').style.display = 'none';
-      const msg = document.getElementById('success-msg');
-      msg.style.display = 'flex';
-    });
-  </script>
+/* ── Nav scroll ───────────────────────────────── */
+window.addEventListener('scroll', ()=>document.getElementById('nav').classList.toggle('scrolled', scrollY>60));
 
+/* ── Reveal ───────────────────────────────────── */
+new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');}}),{threshold:.1}).observe;
+const ro = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');ro.unobserve(e.target);}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+/* ── Footer year ──────────────────────────────── */
+document.getElementById('foot-yr').textContent=`© ${new Date().getFullYear()} Vastorg · European Wine Logistics`;
+
+/* ── Waitlist form ────────────────────────────── */
+async function submitWL(e) {
+  e.preventDefault();
+  const btn=document.getElementById('wl-btn'), errEl=document.getElementById('f-err'), btxt=document.getElementById('btn-txt');
+  const name=document.getElementById('f-name').value.trim(), email=document.getElementById('f-email').value.trim();
+  const co=document.getElementById('f-co').value.trim(), ctry=document.getElementById('f-ctry').value.trim();
+  const role=document.getElementById('f-role').value, msg=document.getElementById('f-msg').value.trim();
+  errEl.style.display='none';
+  if(!name||!email){errEl.textContent=lang==='en'?'Please fill in your name and email.':'Veuillez renseigner votre nom et email.';errEl.style.display='block';return;}
+  btn.disabled=true; btxt.textContent=lang==='en'?'Sending…':'Envoi en cours…';
+  if(NOTION_TOKEN==='YOUR_NOTION_INTEGRATION_TOKEN'){setTimeout(()=>showOK(name),800);return;}
+  try {
+    const body={parent:{database_id:NOTION_DB},properties:{
+      Name:{title:[{text:{content:name}}]},
+      Email:{email},
+      ...(co&&{Company:{rich_text:[{text:{content:co}}]}}),
+      ...(role&&{Role:{select:{name:role}}}),
+      ...(ctry&&{Country:{rich_text:[{text:{content:ctry}}]}}),
+      ...(msg&&{Message:{rich_text:[{text:{content:msg}}]}}),
+      Language:{select:{name:lang.toUpperCase()}},
+      Source:{select:{name:'Landing page'}},
+      Status:{select:{name:'New'}},
+    }};
+    const res=await fetch('https://api.notion.com/v1/pages',{method:'POST',headers:{'Authorization':'Bearer '+NOTION_TOKEN,'Notion-Version':'2022-06-28','Content-Type':'application/json'},body:JSON.stringify(body)});
+    if(!res.ok)throw new Error();
+    showOK(name);
+  } catch {
+    btn.disabled=false; btxt.textContent=lang==='en'?'Join the waitlist':'Rejoindre la liste d\'attente';
+    errEl.textContent=lang==='en'?'Something went wrong. Please try again.':'Une erreur est survenue. Veuillez réessayer.';
+    errEl.style.display='block';
+  }
+}
+function showOK(name) {
+  const first=name.split(' ')[0];
+  document.getElementById('form-area').innerHTML=`<div class="f-ok">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:36px;color:var(--gold);margin-bottom:12px">✦</div>
+    <div class="f-ok-title">${lang==='en'?'Welcome, '+first+'.':'Bienvenue, '+first+'.'}</div>
+    <p class="f-ok-sub">${lang==='en'?"You're on the list. We'll be in touch before launch.":"Vous êtes sur la liste. Nous vous contacterons avant le lancement."}</p>
+  </div>`;
+  const el=document.getElementById('wl-n'); if(el&&el.textContent==='—')el.textContent='1';
+}
+
+/* ── Decision Tree ────────────────────────────── */
+const DTS={step:'start',hist:[],country:null};
+
+const EU_TAX={de:{n:'Germany',e:'€0 / L still wine (Germany levies no wine tax)',v:'19%'},be:{n:'Belgium',e:'€0.062 / L still wine',v:'21%'},nl:{n:'Netherlands',e:'€0.088 / L still wine',v:'21%'},eu_o:{n:'EU destination',e:'Varies by country (0 – €0.66 / L)',v:'Varies (19 – 27%)'}};
+
+const TREE={
+  start:{q:{en:'Where is the wine being shipped?',fr:'Quelle est la destination du vin ?'},opts:[
+    {id:'fr',code:'FR',label:{en:'Within France',fr:'En France'},desc:{en:'Producer to French buyer or consumer',fr:'Du producteur à un acheteur ou consommateur français'},next:'fr_regime',crumb:'France'},
+    {id:'eu',code:'EU',label:{en:'EU country',fr:'Pays de l\'UE'},desc:{en:'Germany, Belgium, Netherlands, Spain, Italy…',fr:'Allemagne, Belgique, Pays-Bas, Espagne, Italie…'},next:'eu_country',crumb:'Intra-EU'},
+    {id:'nEU',code:'EX',label:{en:'Outside EU',fr:'Hors UE'},desc:{en:'USA, UK, Canada, Japan, China, Singapore, Switzerland',fr:'USA, UK, Canada, Japon, Chine, Singapour, Suisse'},next:'nEU_country',crumb:'Outside EU'},
+  ]},
+  fr_regime:{q:{en:'Excise status of the wine?',fr:'Statut accise du vin ?'},opts:[
+    {id:'s',code:'S',label:{en:'Duty suspended',fr:'Droits suspendus'},desc:{en:'Bonded warehouse — accises not yet paid',fr:'Entrepôt fiscal — accises non encore payées'},next:'fr_sus',crumb:'Suspended'},
+    {id:'p',code:'P',label:{en:'Duty paid',fr:'Droits acquittés'},desc:{en:'Accises settled — bottled wine ready for sale',fr:'Accises réglées — vin en bouteille prêt à la vente'},next:'fr_paid_r',crumb:'Duty paid'},
+  ]},
+  fr_sus:{q:{en:'Who is the recipient?',fr:'Qui est le destinataire ?'},opts:[
+    {id:'ea',code:'EA',label:{en:'Entrepositaire Agréé (EA) or DE',fr:'Entrepositaire Agréé (EA) ou DE'},desc:{en:'Only licensed bonded operators can receive duty-suspended wine',fr:'Seuls les opérateurs agréés peuvent recevoir du vin en droits suspendus'},result:'r_fr_sus',crumb:'EA / DE'},
+  ]},
+  fr_paid_r:{q:{en:'Who is receiving the wine?',fr:'Qui reçoit le vin ?'},opts:[
+    {id:'pr',code:'B2B',label:{en:'Professional',fr:'Professionnel'},desc:{en:'Retailer, restaurant, wholesaler',fr:'Détaillant, restaurant, grossiste'},next:'fr_crd',crumb:'B2B'},
+    {id:'co',code:'B2C',label:{en:'Consumer',fr:'Particulier'},desc:{en:'Private individual — home delivery',fr:'Particulier — livraison à domicile'},next:'fr_vol',crumb:'B2C'},
+  ]},
+  fr_crd:{q:{en:'CRD capsule on bottle?',fr:'Capsule CRD sur la bouteille ?'},opts:[
+    {id:'y',code:'CRD',label:{en:'Yes — CRD capsule',fr:'Oui — capsule CRD'},desc:{en:'The fiscal Marianne capsule is affixed',fr:'La capsule fiscale Marianne est apposée'},result:'r_crd_y',crumb:'CRD yes'},
+    {id:'n',code:'DSA',label:{en:'No CRD capsule',fr:'Sans capsule CRD'},desc:{en:'Separate movement document required',fr:'Document d\'accompagnement séparé requis'},result:'r_crd_n',crumb:'No CRD'},
+  ]},
+  fr_vol:{q:{en:'Total volume to this consumer?',fr:'Volume total vers ce consommateur ?'},opts:[
+    {id:'s',code:'≤90L',label:{en:'Up to 90 litres',fr:'Jusqu\'à 90 litres'},desc:{en:'Up to 12 standard cases',fr:'Jusqu\'à 12 caisses standard'},result:'r_b2c_s',crumb:'≤90L'},
+    {id:'l',code:'>90L',label:{en:'More than 90 litres',fr:'Plus de 90 litres'},desc:{en:'Large purchase or collection',fr:'Grande commande ou collection'},result:'r_b2c_l',crumb:'>90L'},
+  ]},
+  eu_country:{q:{en:'Destination EU country?',fr:'Pays UE de destination ?'},sub:{en:'Documents are identical across EU — selection shows country-specific rates.',fr:'Documents identiques dans toute l\'UE — la sélection affiche les taux pays.'},opts:[
+    {id:'de',code:'DE',label:{en:'Germany',fr:'Allemagne'},desc:{en:'0% wine excise — unique in the EU',fr:'0% accise vin — unique dans l\'UE'},next:'eu_ch',setC:'de',crumb:'Germany'},
+    {id:'be',code:'BE',label:{en:'Belgium',fr:'Belgique'},desc:{en:'Very low wine excise (€0.062/L)',fr:'Accise vin très faible (€0.062/L)'},next:'eu_ch',setC:'be',crumb:'Belgium'},
+    {id:'nl',code:'NL',label:{en:'Netherlands',fr:'Pays-Bas'},desc:{en:'Low wine excise (€0.088/L)',fr:'Accise vin faible (€0.088/L)'},next:'eu_ch',setC:'nl',crumb:'Netherlands'},
+    {id:'eo',code:'EU',label:{en:'Other EU',fr:'Autre UE'},desc:{en:'Spain, Italy, Luxembourg, Sweden…',fr:'Espagne, Italie, Luxembourg, Suède…'},next:'eu_ch',setC:'eu_o',crumb:'Other EU'},
+  ]},
+  eu_ch:{q:{en:'B2B or B2C?',fr:'B2B ou B2C ?'},opts:[
+    {id:'b',code:'B2B',label:{en:'B2B — to a professional',fr:'B2B — vers un professionnel'},desc:{en:'Importer, distributor, retailer, restaurant',fr:'Importateur, distributeur, détaillant, restaurant'},next:'eu_reg',crumb:'B2B'},
+    {id:'c',code:'B2C',label:{en:'B2C — to a consumer',fr:'B2C — vers un particulier'},desc:{en:'Vente à distance — direct to private individual',fr:'Vente à distance — direct au particulier'},result:'r_eu_b2c',crumb:'B2C'},
+  ]},
+  eu_reg:{q:{en:'Excise regime?',fr:'Régime d\'accise ?'},opts:[
+    {id:'s',code:'S',label:{en:'Duty suspended',fr:'Droits suspendus'},desc:{en:'Both parties are EA / Destinataire Enregistré',fr:'Les deux parties sont EA / Destinataire Enregistré'},result:'r_eu_sus',crumb:'Suspended'},
+    {id:'p',code:'P',label:{en:'Duty paid',fr:'Droits acquittés'},desc:{en:'Accises paid in France — recipient has no accise number',fr:'Accises payées en France — destinataire sans numéro d\'accise'},result:'r_eu_paid',crumb:'Duty paid'},
+  ]},
+  nEU_country:{q:{en:'Destination country?',fr:'Pays de destination ?'},opts:[
+    {id:'us',code:'US',label:{en:'United States',fr:'États-Unis'},desc:{en:'Three-tier system — licensed importer mandatory',fr:'Système à trois niveaux — importateur agréé obligatoire'},next:'nEU_ch',setC:'us',crumb:'USA'},
+    {id:'uk',code:'UK',label:{en:'United Kingdom',fr:'Royaume-Uni'},desc:{en:'Post-Brexit customs + UK excise + AWRS',fr:'Douanes post-Brexit + accise UK + AWRS'},next:'nEU_ch',setC:'uk',crumb:'UK'},
+    {id:'ca',code:'CA',label:{en:'Canada',fr:'Canada'},desc:{en:'Provincial liquor board monopolies',fr:'Monopoles des régies provinciales des alcools'},next:'nEU_ch',setC:'ca',crumb:'Canada'},
+    {id:'ch',code:'CH',label:{en:'Switzerland',fr:'Suisse'},desc:{en:'0% customs + 0% alcohol duty on still wine',fr:'0% douane + 0% taxe alcool sur vin tranquille'},next:'nEU_ch',setC:'ch',crumb:'Switzerland'},
+    {id:'jp',code:'JP',label:{en:'Japan',fr:'Japon'},desc:{en:'0% customs (EU-Japan EPA) + NTA license',fr:'0% douane (ALE UE-Japon) + licence NTA'},next:'nEU_ch',setC:'jp',crumb:'Japan'},
+    {id:'cn',code:'CN',label:{en:'China',fr:'Chine'},desc:{en:'GACC registration + ~43% total tax',fr:'Enregistrement GACC + ~43% de charge fiscale'},next:'nEU_ch',setC:'cn',crumb:'China'},
+    {id:'sg',code:'SG',label:{en:'Singapore',fr:'Singapour'},desc:{en:'0% customs — best Asian DTC market',fr:'0% douane — meilleur marché DTC asiatique'},next:'nEU_ch',setC:'sg',crumb:'Singapore'},
+  ]},
+  nEU_ch:{q:{en:'B2B or B2C?',fr:'B2B ou B2C ?'},opts:[
+    {id:'b',code:'B2B',label:{en:'B2B — to a licensed business',fr:'B2B — vers une entreprise agréée'},desc:{en:'Commercial shipment to registered business',fr:'Expédition commerciale vers une entreprise enregistrée'},result:'r_nEU_b2b',crumb:'B2B'},
+    {id:'c',code:'B2C',label:{en:'B2C — to a consumer',fr:'B2C — vers un particulier'},desc:{en:'Direct to individual at home address',fr:'Direct au domicile d\'un particulier'},result:'r_nEU_b2c',crumb:'B2C'},
+  ]},
+};
+
+const BASE=[
+  {n:'DAE Export (GAMMA2 / EMCS)',p:'GAMMA2',t:'Excise movement doc for goods leaving EU duty-suspended. Generates ARC. Auto-closed by DELTA when EX-A scanned at exit point.'},
+  {n:'Déclaration d\'exportation EX-A (DELTA)',p:'DELTA G / DELTA X',t:'Core export customs declaration. Generates MRN + EAD barcode scanned at French exit point.'},
+  {n:'BVE — Bordereau de Vente à l\'Exportation',p:'PABLO portal',t:'Wine-specific mandatory export document. Scanned at border. Retain 10 years. Include: designation, ABV, volume, AOC.'},
+  {n:'Facture commerciale HT',p:'—',t:'No French TVA (Art. L.262 I CGI). Include: EORI, HS 2204.xx, Incoterms, vintage, ABV, bottle count, unit price.'},
+  {n:'Packing list',p:'—',t:'Case-by-case breakdown matching invoice exactly.'},
+  {n:'CMR (road) / Bill of Lading (sea) / AWB (air)',p:'Carrier',t:'Transport document matching chosen mode — original must accompany shipment.'},
+];
+
+const CDOCS={
+  us:{b2b:{cx:'v',extra:[
+    {n:'EUR.1 or REX declaration',p:'CCI or SOPRANO',t:'0% MFN customs duty. Note: 15% EU surcharge (2025) still applies.'},
+    {n:'FDA Prior Notice',p:'FDA ACE portal (access.fda.gov)',t:'Filed by US importer ≥24h before vessel arrival.'},
+    {n:'FDA food facility registration',p:'FDA access.fda.gov',t:'French wine producer facility must be registered — biennial renewal.'},
+  ],local:['US importer: TTB Federal Basic Importer\'s Permit required','COLA (Certificate of Label Approval) per unique label — 5–15 days via COLAs Online','CBP customs entry via ACE system — filed by US customs broker','Federal excise: $0.21/750ml still wine — paid at CBP','Three-tier mandatory — Importer → Distributor → Retailer, no shortcutting'],
+  dtc:false,dtn:'Federal law requires licensed TTB importer to receive wine first — no direct France → consumer shipping',
+  duty:'0% customs (MFN) + 15% EU surcharge (2025) + $0.21/bottle federal excise + state taxes',
+  warn:['COLA required per label BEFORE goods arrive — not obtainable retroactively','Three-tier system is federal law — bypassing importer or distributor is illegal','15% EU wine surcharge currently in effect (2025)']},
+  b2c:{cx:'v',dtc:false,dtn:'Federal law blocks cross-border DTC — wine must complete full three-tier journey first',duty:'N/A — cross-border B2C not legally permitted',
+  warn:['Cannot ship from France directly to a US consumer','47 states allow domestic DTC, but only from US-licensed entities','Partner with licensed US importer for domestic consumer delivery']}},
+  uk:{b2b:{cx:'h',extra:[
+    {n:'UK health certificate (VI1-equivalent)',p:'DGDDI (French Customs)',t:'Required since Brexit. Certifies wine meets UK oenological standards.'},
+    {n:'EUR.1 certificate or REX declaration',p:'CCI or SOPRANO',t:'0% customs under UK-EU TCA. Without it, standard 3rd-country tariff applies.'},
+  ],local:['UK importer: EORI + AWRS (Alcohol Wholesaler Registration Scheme, HMRC)','UK customs declaration via CDS (UK Customs Declaration Service)','Wine enters HMRC-approved excise warehouse upon arrival','Excise ~£29.54/L pure alcohol (~£2.76/bottle at 12.5% ABV) + 20% VAT — paid on release from bond'],
+  dtc:true,dtn:'DHL/FedEx deliver directly to UK consumers — DDP (pre-paid duties) strongly recommended',
+  duty:'0% customs (TCA + EUR.1) + ~£2.76/bottle excise + 20% VAT',
+  warn:['UK health certificate required — add lead time to obtain from DGDDI','EUR.1/REX essential for 0% customs — without it full tariff applies','DDP model: pre-pay excise + VAT for seamless consumer delivery; DDU adds friction (courier admin fee)']},
+  b2c:{cx:'h',extra:[{n:'UK health certificate',p:'DGDDI',t:''},{n:'EUR.1 certificate',p:'CCI',t:'0% customs under TCA'}],
+  dtc:true,dtn:'DHL/FedEx deliver wine directly to UK consumer addresses from France',
+  duty:'0% customs + ~£2.76/bottle excise + 20% VAT — must be pre-paid (DDP)',
+  warn:['DDP model essential: pre-pay UK excise + 20% VAT for seamless delivery','No de minimis exemption for alcohol — excise applies from bottle 1','Adult signature (18+) mandatory at delivery']}},
+  ca:{b2b:{cx:'v',extra:[
+    {n:'EUR.1 or REX declaration',p:'CCI or SOPRANO',t:'0% customs under EU-Canada CETA.'},
+    {n:'Bilingual labels (English + French)',p:'—',t:'Mandatory for all wine sold commercially in Canada — bottles rejected at border without both languages.'},
+    {n:'Lab analysis certificate',p:'Accredited lab',t:'Required by most provincial boards before listing (CAD$250/wine at LCBO).'},
+  ],local:['Licensed Canadian agent/importer required — province-specific','Submit product to provincial board: LCBO (ON), SAQ (QC), BCLDB (BC), AGLC (AB)','CBSA customs entry (B3 form via Canadian customs broker)','Federal excise CAD$0.691/L + 5% GST + provincial markup (50–100%+)'],
+  dtc:false,dtn:'Provincial monopoly laws intercept courier/mail shipments — cannot deliver to consumer addresses',
+  duty:'0% customs (CETA + EUR.1) + CAD$0.691/L excise + 5% GST + provincial markup',
+  warn:['Provincial markups can triple the retail price — build into pricing strategy','Bilingual EN+FR labels mandatory — wines rejected at border without both languages','Alberta is most private-import-friendly — consider as beachhead market']},
+  b2c:{cx:'v',dtc:false,dtn:'Provincial boards legally intercept international courier/mail shipments to consumers',duty:'N/A — cross-border B2C not commercially viable',
+  warn:['Shipments to consumers are redirected to the provincial liquor authority','Personal import: up to 1.5L duty-free for returning travellers (48h+ abroad)','LCBO Specialty Services: consumer can request import — takes up to 6 months']}},
+  ch:{b2b:{cx:'m',extra:[{n:'EUR.1 certificate',p:'CCI (Chambre de Commerce)',t:'0% customs duty under CH-EU bilateral agricultural agreement. Without it, standard Swiss tariff applies.'}],
+  local:['Swiss customs declaration at BAZG/OFDF — Switzerland is not in the EU','Swiss importer: VAT-registered (ESTV/AFC) — no special wine import license needed','0% customs + 0% alcohol duty on natural still wine ≤15% ABV','Swiss VAT: 8.1%'],
+  dtc:true,dtn:'DHL/FedEx routinely deliver wine from France to Swiss businesses and consumers — very common route',
+  duty:'0% customs (CH-EU bilateral + EUR.1) + 0% alcohol duty (still wine ≤15%) + 8.1% Swiss VAT',
+  warn:['Switzerland is NOT in the EU — customs declaration required at Swiss border despite proximity','EUR.1 essential for 0% customs — always include it','Sparkling wine: CHF ~0.44/bottle alcohol duty applies (still wine is exempt)','Lowest total tax burden of all non-EU destinations for French still wine']},
+  b2c:{cx:'m',extra:[{n:'EUR.1 certificate',p:'CCI',t:'0% customs duty'}],
+  dtc:true,dtn:'DHL/FedEx deliver directly to Swiss consumer addresses — very easy, common route for French online wine merchants',
+  duty:'0% customs + 0% alcohol duty (still wine ≤15%) + 8.1% Swiss VAT',
+  warn:['DDU: courier collects 8.1% VAT from consumer at delivery — very low tax amount','DDP: pre-pay Swiss VAT — recommended for high-volume sellers (requires Swiss VAT registration)','1–2 day transit from France by road']}},
+  jp:{b2b:{cx:'h',extra:[
+    {n:'EUR.1 certificate',p:'CCI or SOPRANO',t:'0% customs duty under Japan-EU EPA (2019).'},
+    {n:'CERTEX health certificate',p:'DREETS via telecertex.dgccrf.finances.gouv.fr',t:'Sanitary/phytosanitary certificate for Japan. Allow 5–10 working days.'},
+  ],local:['Japanese importer: NTA Liquor Trade License (takes 1–3 months to obtain)','Food Sanitation Act (FSA) notification to MHLW — filed by Japanese importer before release','Port quarantine inspection — sensory tests + possible lab testing (allow extra time for new products)','Japanese-language labels mandatory: product name, ABV, volume, importer details, origin, 20+ warning','Liquor tax: ¥28/L still wine (~¥21/bottle at 750ml) + 10% consumption tax'],
+  dtc:false,dtn:'Must pass through licensed Japanese importer (IOR) — DHL/FedEx deliver last-mile within Japan after customs clearance',
+  duty:'0% customs (EU-Japan EPA + EUR.1) + ¥28/L liquor tax (~¥21/bottle) + 10% consumption tax',
+  warn:['Japanese labels must be on bottles at time of MHLW/quarantine inspection — cannot add labels afterwards','Age restriction: 20+ in Japan (stricter than EU/US/UK)','Air freight strongly preferred for premium wine to Japan']},
+  b2c:{cx:'h',extra:[],dtc:false,dtn:'Licensed Japanese IOR must receive and clear goods — DHL/FedEx then deliver last-mile domestically',
+  duty:'0% customs + ¥28/L liquor tax + 10% consumption tax',
+  warn:['Japanese importer with mail-order retail license (Tsushin Hanbai) handles domestic consumer delivery after clearance','Japanese labels mandatory before delivery to consumer','Age restriction: 20+ in Japan']}},
+  cn:{b2b:{cx:'v',extra:[
+    {n:'GACC producer registration (18-digit)',p:'CIFER portal (cifer.singlewindow.cn)',t:'Mandatory since Jan 2022. Self-registration for wine producers. 18-digit number on inner AND outer packaging. Old 11-digit numbers invalid since Sept 2024.'},
+    {n:'ACV — Attestation Consolidée de Vinification',p:'INAO or DGCCRF',t:'China-specific wine export certificate from French authority — different from standard VI-1.'},
+    {n:'Certificate of analysis',p:'Accredited laboratory',t:'Chemical analysis — pesticides, additives, contaminants. Required by GACC.'},
+    {n:'Certificate of origin (non-preferential)',p:'CCI',t:'Required by GACC. Note: no EU-China FTA for standard wine imports.'},
+  ],local:['Chinese importer: Food Import License (SAMR) + Food Distribution License + GACC importer record filing','Chinese-language labels mandatory at time of GACC inspection (not just upon delivery)','GACC customs pre-declaration 2–3 days before vessel arrival','GACC inspection: 3–14 days — allow ample buffer time'],
+  dtc:false,dtn:'Commercial volumes require licensed Chinese importer. CBEC channel (Tmall Global, JD Worldwide) for small B2C orders.',
+  duty:'14% customs + 10% consumption tax + 13% VAT ≈ 43% of CIF value',
+  warn:['GACC producer registration can take weeks — plan well in advance','Chinese labels must be on bottles AT TIME of GACC inspection — no label = rejection and return','Old 11-digit GACC registration numbers invalid since Sept 2024 — must update to 18-digit']},
+  b2c:{cx:'v',dtc:'p',dtn:'CBEC channel: DHL/FedEx operate bonded logistics for small B2C orders — GACC registration still required',
+  duty:'CBEC: 0% customs + ~7% consumption tax + ~9% VAT | Standard: ~43% CIF',
+  warn:['CBEC limits: CNY 5,000/transaction (~€650), CNY 26,000/year per individual consumer','GACC producer registration required even for CBEC channel','Chinese labels required even for CBEC — in-package insert acceptable for this channel']}},
+  sg:{b2b:{cx:'m',extra:[{n:'TradeNet In-Payment permit',p:'Singapore Customs / TradeNet',t:'Filed by Singapore-registered freight forwarder. Required for all dutiable goods arriving in Singapore.'}],
+  local:['Singapore importer: ACRA-registered (Singapore company) + SFA (Singapore Food Agency) food import license','Registered as TradeNet user with Singapore Customs','Excise: SGD 88/L of alcohol (~SGD 8.58/bottle at 13% ABV)','+ 9% GST on (CIF + excise)','Option: Licensed Warehouse (LW) to defer duties — ideal for ASEAN re-export hub strategy'],
+  dtc:true,dtn:'DHL/FedEx Singapore hub delivers wine to consumers after customs clearance — best Asian DTC market',
+  duty:'0% customs + SGD 88/L alcohol excise (~SGD 8.58/bottle at 13% ABV) + 9% GST',
+  warn:['Singapore is highly open — no customs duty, clear excise formula','ASEAN hub: Licensed Warehouse to re-export to Malaysia, Thailand, Indonesia duty-suspended','Singapore is a major DHL/FedEx hub — 2–3 days air freight from France']},
+  b2c:{cx:'m',extra:[],dtc:true,dtn:'DHL/FedEx deliver wine directly to Singapore consumer addresses — excise + GST cleared at port first',
+  duty:'0% customs + SGD 88/L alcohol excise + 9% GST',
+  warn:['Singapore-registered importer acts as IOR — handles TradeNet permit + excise payment','After clearance (excise + GST paid at port), courier delivers to consumer address','Age restriction: 18+ in Singapore']}},
+};
+
+const IR={
+  r_fr_sus:{title:{en:'France · Duty suspended · EA → EA / DE',fr:'France · Droits suspendus · EA → EA / DE'},cx:'m',dtc:false,dtn:'EMCS-tracked bonded transport required — not standard courier parcels',duty:'Deferred — settled at point of consumption (mise à la consommation)',
+    m:[{n:'DAE (Document Administratif Electronique)',p:'GAMMA2 / EMCS',t:'Creates ARC code that must accompany shipment. Both parties must be EA or Destinataire Enregistré.'},{n:'Facture commerciale',p:'—',t:''},{n:'Lettre de voiture / CMR',p:'—',t:''}],
+    periodic:[{n:'DRM mensuelle',p:'CIEL',t:'Filed by 10th of each month'},{n:'Registre de cave',p:'Internal',t:'Continuous stock ledger — mandatory for all EA'}],
+    warn:['Verify recipient SEED number before dispatch — only EA/DE can legally receive duty-suspended wine','ARC code must accompany shipment at all times during transport'],portals:['GAMMA2','CIEL']},
+  r_crd_y:{title:{en:'France · Duty paid · CRD capsule · Professional',fr:'France · Droits acquittés · Capsule CRD · Professionnel'},cx:'l',dtc:true,dtn:'Any standard courier (Chronopost, Colissimo, DHL) can deliver freely',duty:'Accises paid at time of CRD capsule purchase',
+    m:[{n:'CRD capsule on bottle',p:'—',t:'The fiscal Marianne capsule IS the movement document — replaces DAE and DSA. No other excise document needed.'},{n:'Facture commerciale',p:'—',t:''},{n:'Lettre de voiture / CMR',p:'—',t:''}],
+    periodic:[{n:'DRM mensuelle',p:'CIEL',t:'By 10th each month'}],
+    warn:['CRD has no legal value outside France — use DAE or DAES for any cross-border movement'],portals:['CIEL']},
+  r_crd_n:{title:{en:'France · Duty paid · No CRD · Professional',fr:'France · Droits acquittés · Sans CRD · Professionnel'},cx:'l',dtc:true,dtn:'Standard couriers acceptable — duty already paid',duty:'Accises already paid',
+    m:[{n:'DSA (Document Simplifié d\'Accompagnement)',p:'Paper / GAMMA2',t:'Paper form valid for domestic France B2B movements. Do NOT use paper DSA for intra-EU B2B — digital DAES required since Feb 2023.'},{n:'Facture commerciale',p:'—',t:''},{n:'Lettre de voiture / CMR',p:'—',t:''}],
+    periodic:[{n:'DRM mensuelle',p:'CIEL',t:'By 10th each month'}],
+    warn:['Paper DSA valid for domestic France movements only','For intra-EU B2B: digital DAES via GAMMA2 is mandatory since 13 Feb 2023'],portals:['CIEL']},
+  r_b2c_s:{title:{en:'France · B2C · Up to 90L',fr:'France · B2C · Jusqu\'à 90L'},cx:'l',dtc:true,dtn:'Any standard courier — no bonded requirement',duty:'Included in retail price',
+    m:[{n:'Document commercial (facture, bon de livraison)',p:'—',t:'If CRD capsule on bottle: no other document needed. Without CRD: standard invoice sufficient for ≤90L.'}],
+    periodic:[{n:'DRM mensuelle',p:'CIEL',t:'By 10th each month'}],
+    warn:['Age verification (18+) required at delivery','With CRD capsule: no other document required — simplest domestic B2C route'],portals:['CIEL']},
+  r_b2c_l:{title:{en:'France · B2C · More than 90L',fr:'France · B2C · Plus de 90L'},cx:'l',dtc:true,dtn:'Standard couriers or dedicated freight',duty:'Included in retail price',
+    m:[{n:'Document économique détaillé',p:'—',t:'Required for >90L to a single consumer. Must include: commercial designation, ABV, volume, colour, AOC/origin.'},{n:'Facture commerciale',p:'—',t:''}],
+    periodic:[{n:'DRM mensuelle',p:'CIEL',t:'By 10th each month'}],
+    warn:['>90L to a single consumer is unusual — document the genuine personal use purpose','Age verification (18+) required'],portals:['CIEL']},
+  r_eu_sus:{title:{en:'EU · B2B · Duty suspended · EA → EA / DE',fr:'UE · B2B · Droits suspendus · EA → EA / DE'},cx:'m',dtc:false,dtn:'EMCS-tracked bonded transport required',duty:'No customs. Excise deferred — settled by receiving EA/DE in destination country.',
+    m:[{n:'DAE (EMCS pan-EU)',p:'GAMMA2 / EMCS',t:'Electronic excise doc. ARC generated. Both sender (EA) and receiver (EA or DE) must be EMCS-registered.'},{n:'Facture commerciale HT (ex-VAT)',p:'—',t:'No French TVA. Include: TVA intracommunautaire of both parties, Art. 262 ter I CGI, Incoterms, HS 2204.xx.'},{n:'CMR (road) or AWB (air)',p:'—',t:''},{n:'Packing list',p:'—',t:''}],
+    periodic:[{n:'DRM mensuelle',p:'CIEL',t:''},{n:'DEB (Déclaration d\'Échanges de Biens)',p:'EMEBI / douane.gouv.fr',t:'Monthly if annual intra-EU dispatches >€460,000'}],
+    warn:['Verify recipient SEED number before dispatch (ec.europa.eu/taxation_customs/seed)','No customs declaration — EU single market, no border formalities','DAE must be apured (closed) once receiver confirms receipt in EMCS'],portals:['GAMMA2 / EMCS','CIEL','EMEBI']},
+  r_eu_paid:{title:{en:'EU · B2B · Duty paid · DAES',fr:'UE · B2B · Droits acquittés · DAES'},cx:'m',dtc:true,dtn:'DHL/FedEx and standard couriers can deliver duty-paid wine to EU businesses',duty:'No customs. Excise paid in France. Reverse charge VAT — buyer accounts for destination-country VAT.',
+    m:[{n:'DAES (Document Administratif Electronique Simplifié)',p:'GAMMA2',t:'Mandatory since 13 Feb 2023 for ALL intra-EU B2B duty-paid movements. Sender needs "Expéditeur Certifié" (EC) status; receiver needs "Destinataire Certifié" (DC). Both obtained from DGDDI. Replaces paper DSA entirely.'},{n:'Facture commerciale HT',p:'—',t:'TVA intracommunautaire of both parties, Art. 262 ter I CGI, Incoterms, HS 2204.xx'},{n:'CMR or AWB',p:'—',t:''}],
+    periodic:[{n:'DRM mensuelle',p:'CIEL',t:''},{n:'DEB',p:'EMEBI',t:'If annual intra-EU dispatches >€460,000'}],
+    warn:['CRITICAL: Paper DSA/DSAC is NO LONGER VALID for intra-EU B2B since 13 Feb 2023','Obtain "Expéditeur Certifié" (EC) status from DGDDI before first DAES shipment','Recipient must also hold "Destinataire Certifié" (DC) status in their country'],portals:['GAMMA2 (DAES)','CIEL','EMEBI']},
+  r_eu_b2c:{title:{en:'EU · B2C · Vente à distance',fr:'UE · B2C · Vente à distance'},cx:'l',dtc:true,dtn:'DHL/FedEx deliver directly to EU consumers from France — no mandatory warehouse stop needed',duty:'No customs. Low excise (varies by country). VAT via OSS if >€10,000/year EU B2C sales.',
+    m:[{n:'Facture / document commercial',p:'—',t:'No DAES needed for B2C. Standard invoice suffices.'},{n:'Transport consignment note',p:'—',t:''}],
+    cond:[{n:'OSS VAT registration (EU One-Stop-Shop)',cond:'If annual B2C EU sales > €10,000',t:'Register via DGFIP. Charge destination country VAT, file quarterly OSS declaration. Below threshold: French TVA (20%) applies instead.'}],
+    periodic:[{n:'DRM mensuelle',p:'CIEL',t:''},{n:'OSS quarterly declaration',p:'DGFIP OSS portal (impots.gouv.fr)',t:'If registered for OSS'}],
+    warn:['No DAES required for B2C — standard invoice suffices (Vente à Distance regime)','Age verification (18+) required at delivery in all EU countries'],portals:['CIEL','DGFIP OSS portal']},
+};
+
+function t(o){return typeof o==='string'?o:(o[lang]||o.en||'')}
+function cxCls(c){return{l:'cx-l',m:'cx-m',h:'cx-h',v:'cx-v'}[c]||'cx-m'}
+function cxLbl(c){return{l:'Low complexity',m:'Medium complexity',h:'High complexity',v:'Very high complexity'}[c]||'—'}
+function cbBox(dtc,note){
+  if(dtc===true)return`<div class="cb cb-y"><div class="cb-icon">✓</div><div><div class="cb-lbl">Direct courier delivery: Yes</div><div class="cb-note">${note}</div></div></div>`;
+  if(dtc===false)return`<div class="cb cb-n"><div class="cb-icon">✗</div><div><div class="cb-lbl">Direct courier delivery: Not possible</div><div class="cb-note">${note}</div></div></div>`;
+  return`<div class="cb cb-p"><div class="cb-icon">~</div><div><div class="cb-lbl">Direct courier delivery: Conditional</div><div class="cb-note">${note}</div></div></div>`;
+}
+function docL(docs,dot,lbl){
+  if(!docs||!docs.length)return'';
+  return`<div class="doc-sec"><div class="doc-sec-lbl">${lbl}</div>${docs.map(d=>`<div class="doc-item"><div class="dot ${dot}"></div><div style="flex:1">${d.cond?`<div class="doc-cond">If: ${d.cond}</div>`:''}<div class="doc-nm">${d.n||d.name}</div>${(d.p||d.plat)&&(d.p||d.plat)!=='—'?`<div class="doc-pl">${d.p||d.plat}</div>`:''}<div class="doc-nt">${d.t||d.note||''}</div></div></div>`).join('')}</div>`;
+}
+function renderResult(key){
+  let title,cx,duty,dtc,dtn,warn=[],mDocs,cDocs=[],pDocs=[],local=[],portals=[],euTax='';
+  if(key==='r_nEU_b2b'||key==='r_nEU_b2c'){
+    const d=CDOCS[DTS.country],ch=key==='r_nEU_b2b'?'b2b':'b2c',r=d[ch];
+    title=d.b2b.duty?`${DTS.country.toUpperCase()} · ${ch.toUpperCase()}`:`${DTS.country.toUpperCase()} · ${ch.toUpperCase()}`;
+    const cnames={us:'United States',uk:'United Kingdom',ca:'Canada',ch:'Switzerland',jp:'Japan',cn:'China',sg:'Singapore'};
+    title=`${cnames[DTS.country]} · ${ch.toUpperCase()}`;
+    cx=r.cx; duty=r.duty; dtc=r.dtc; dtn=r.dtn;
+    warn=r.warn||[]; local=r.local||[];
+    mDocs=[...BASE,...(r.extra||[])];
+  } else {
+    const r=IR[key];
+    title=t(r.title); cx=r.cx; duty=r.duty; dtc=r.dtc; dtn=r.dtn;
+    warn=r.warn||[]; portals=r.portals||[];
+    mDocs=r.m||[]; cDocs=r.cond||[]; pDocs=r.periodic||[];
+  }
+  if(['r_eu_sus','r_eu_paid','r_eu_b2c'].includes(key)){
+    const et=EU_TAX[DTS.country||'eu_o'];
+    euTax=`<div class="ds" style="margin-bottom:8px"><div class="ds-l">Excise at destination (${et.n})</div><div class="ds-v">${et.e}</div></div><div class="ds"><div class="ds-l">VAT at destination (${et.n})</div><div class="ds-v">${et.v}</div></div>`;
+  }
+  const localH=local.length?`<div class="doc-sec"><div class="doc-sec-lbl">Local requirements at destination</div><div class="lrl">${local.map(l=>`<div class="lri">${l}</div>`).join('')}</div></div>`:'';
+  const warnH=warn.length?`<div class="warn-box"><div class="warn-t">Key warnings</div>${warn.map(w=>`<div class="warn-i"><span>i</span><span>${w}</span></div>`).join('')}</div>`:'';
+  const portH=portals.length?`<div class="doc-sec"><div class="doc-sec-lbl">Portals</div><div class="portal-strip">${portals.map(p=>`<span class="portal-pill">${p}</span>`).join('')}</div></div>`:'';
+  const trailTxt=DTS.hist.map(h=>h.crumb).filter(Boolean).join(' → ');
+  document.getElementById('dt-main').innerHTML=`<div class="dt-result">
+    <div class="res-hd"><div><div class="res-title">${title}</div><div class="res-route">${trailTxt}</div></div><span class="cx ${cxCls(cx)}">${cxLbl(cx)}</span></div>
+    ${cbBox(dtc,dtn)}
+    <div class="ds" style="margin-bottom:10px"><div class="ds-l">Duties & taxes</div><div class="ds-v">${duty}</div></div>
+    ${euTax}
+    ${docL(mDocs,'dot-m','Mandatory documents')}
+    ${docL(cDocs,'dot-c','Conditional')}
+    ${docL(pDocs,'dot-p','Periodic obligations')}
+    ${localH}${warnH}${portH}
+    <div class="dt-nav"><button class="dt-back" onclick="dtBack()">&#8592; Back</button><button class="dt-rstbtn" onclick="dtReset()">Start over</button></div>
+  </div>`;
+  updateTrail();
+}
+function updateTrail(){
+  const el=document.getElementById('dt-trail');
+  const cr=DTS.hist.filter(h=>h.crumb);
+  if(!cr.length){el.innerHTML='';return;}
+  el.innerHTML=cr.map((h,i)=>`<span class="dt-crumb">${h.crumb}</span>${i<cr.length-1?'<span class="dt-sep">→</span>':''}`).join('');
+}
+function renderStep(){
+  const step=TREE[DTS.step]; if(!step)return;
+  const q=t(step.q), qs=step.sub?t(step.sub):'';
+  document.getElementById('dt-main').innerHTML=`<div style="animation:fadeUp .2s ease">
+    <div class="dt-step">Step ${DTS.hist.length+1}</div>
+    <div class="dt-q">${q}</div>
+    ${qs?`<div class="dt-qs">${qs}</div>`:'<div style="margin-bottom:1.5rem"></div>'}
+    <div class="dt-opts">${step.opts.map(o=>`<button class="dt-opt" onclick='dtGo(${JSON.stringify(o)})'>
+      <div class="dt-opt-code">${o.code}</div>
+      <div class="dt-opt-label">${t(o.label)}</div>
+      <div class="dt-opt-desc">${t(o.desc)}</div>
+    </button>`).join('')}</div>
+    ${DTS.hist.length?`<div class="dt-nav"><button class="dt-back" onclick="dtBack()">&#8592; Back</button></div>`:''}
+  </div>`;
+  updateTrail();
+}
+function dtGo(o){
+  DTS.hist.push({step:DTS.step,country:DTS.country,crumb:o.crumb});
+  if(o.setC)DTS.country=o.setC;
+  if(o.result){renderResult(o.result);return;}
+  DTS.step=o.next; renderStep();
+}
+function dtBack(){const p=DTS.hist.pop();DTS.step=p.step;DTS.country=p.country;renderStep();}
+function dtReset(){DTS.step='start';DTS.hist=[];DTS.country=null;renderStep();}
+window._dtRender=renderStep;
+renderStep();
+</script>
 </body>
 </html>
