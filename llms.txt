@@ -1,0 +1,58 @@
+# Vastorg
+
+> European wine logistics and freight forwarding — from France to the world.
+
+Vastorg is a freight forwarding company specialised exclusively in wine logistics. We ship wine from France and Europe to 10+ global markets, handling all customs documentation, excise compliance, bonded warehousing, temperature-controlled transport, and B2B and B2C delivery.
+
+## What Vastorg does
+
+Vastorg manages the complete logistics chain for wine shipments originating in France and Europe:
+
+- **Freight forwarding** — organising transport by road, air, or sea from producer to destination
+- **Customs documentation** — preparing and filing all required documents for each corridor
+- **Excise compliance** — managing duty-suspended and duty-paid movements under EMCS
+- **Bonded warehousing** — storing wine in licensed fiscal warehouses (entrepôts fiscaux agréés)
+- **Temperature-controlled transport** — maintaining wine integrity from cellar to consumer
+- **B2B logistics** — producer to importer, distributor, or retailer
+- **B2C logistics** — direct-to-consumer delivery where regulations permit
+
+## Markets served
+
+USA, United Kingdom, Canada, Japan, China, Singapore, Switzerland, France, Germany, Belgium, Netherlands, Spain, Italy, and other EU countries.
+
+## Documents handled
+
+| Document | Purpose | Portal |
+|---|---|---|
+| DAE (Document Administratif Electronique) | Duty-suspended wine movements (EU + export) | GAMMA2 / EMCS |
+| DAES (Document Administratif Electronique Simplifié) | Intra-EU B2B duty-paid movements (mandatory since Feb 2023) | GAMMA2 |
+| BVE (Bordereau de Vente à l'Exportation) | Mandatory French wine export document | PABLO |
+| EX-A customs declaration | French export declaration, generates MRN | DELTA |
+| FDA Prior Notice | Required for all wine entering the USA, filed ≥24h before arrival | FDA ACE |
+| COLA (Certificate of Label Approval) | Required per wine label for US market | COLAs Online / TTB |
+| GACC registration | Mandatory 18-digit producer registration for wine entering China | CIFER |
+| EUR.1 certificate | Preferential origin certificate for 0% customs duty | Chamber of Commerce |
+| CMR / AWB / Bill of Lading | Transport documents for road, air, and sea respectively | Carrier |
+| DRM mensuelle | Monthly excise return for French producers | CIEL |
+
+## Key facts
+
+- Vastorg is 100% specialised in wine — not a generalist freight forwarder
+- Founded in France, at the crossroads of Bordeaux, Burgundy, and Switzerland
+- Covers both B2B (producer → importer/distributor/retailer) and B2C (direct-to-consumer) shipments
+- B2C delivery is possible in EU, UK, Switzerland, Singapore; restricted in USA, Canada, Japan, China
+- US wine imports require a licensed TTB importer under the mandatory three-tier system
+- China wine imports require GACC producer registration (18-digit, mandatory since Jan 2022)
+- Canada wine imports go through provincial liquor board monopolies (LCBO, SAQ, BCLDB, AGLC)
+
+## Status
+
+Pre-launch. Accepting waitlist registrations at https://www.vastorg.com
+
+## Languages
+
+English, French, Spanish, Italian, Portuguese
+
+## Website
+
+https://www.vastorg.com

@@ -5,10 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- SEO -->
-<title>Vastorg — European Wine Logistics & Freight Forwarding</title>
-<meta name="description" content="Vastorg specialises in wine freight forwarding from Europe to the world. B2B and B2C shipping, customs documentation, bonded warehousing. Join the waitlist.">
-<meta name="keywords" content="wine logistics, wine freight forwarding, wine export, European wine shipping, wine customs documents, wine import, France wine export, freight forwarding wine, wine B2B B2C logistics, wine transport Europe">
-<meta name="robots" content="index, follow">
+<title>Vastorg — European Wine Logistics & Freight Forwarding | France to the World</title>
+<meta name="description" content="Vastorg is the wine freight forwarder built for producers, négociants and importers. B2B and B2C shipping from France to USA, UK, Canada, Japan, Asia and the EU. Expert customs documentation. Join the waitlist.">
+<meta name="keywords" content="wine logistics, wine freight forwarding, wine export France, European wine shipping, wine customs documents, wine import USA UK Canada Japan, freight forwarding wine, wine B2B B2C logistics, wine transport Europe, expédition vin France, logistique viticole">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="Vastorg">
+<meta name="geo.region" content="FR">
+<meta name="geo.placename" content="France">
+<meta name="theme-color" content="#8B6914">
 <link rel="canonical" href="https://www.vastorg.com/">
 
 <!-- hreflang -->
@@ -28,6 +32,7 @@
 <meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:locale:alternate" content="es_ES">
 <meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_PT">
 <meta property="og:site_name" content="Vastorg">
 
 <!-- Twitter -->
@@ -48,29 +53,58 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://www.vastorg.com/#website",
+      "url": "https://www.vastorg.com",
+      "name": "Vastorg",
+      "description": "European wine logistics and freight forwarding — from France to the world",
+      "publisher": { "@id": "https://www.vastorg.com/#organization" },
+      "inLanguage": ["en","fr","es","it","pt"]
+    },
+    {
       "@type": "Organization",
       "@id": "https://www.vastorg.com/#organization",
       "name": "Vastorg",
       "url": "https://www.vastorg.com",
-      "description": "Vastorg is a European wine freight forwarding company specialising in B2B and B2C wine logistics from France and Europe to global destinations including the USA, UK, Canada, Japan, China, Singapore, and Switzerland.",
-      "foundingLocation": { "@type": "Place", "name": "France" },
-      "areaServed": ["FR","US","GB","CA","JP","CN","SG","CH","DE","BE","NL","ES","IT"],
+      "description": "Vastorg is a European wine freight forwarding company specialising exclusively in B2B and B2C wine logistics. We ship from France and Europe to 10+ global destinations including the USA, UK, Canada, Japan, China, Singapore, and Switzerland, handling all customs documentation, excise compliance, and last-mile delivery.",
+      "foundingLocation": { "@type": "Place", "name": "France", "addressCountry": "FR" },
+      "areaServed": [
+        { "@type": "Country", "name": "France" },
+        { "@type": "Country", "name": "United States" },
+        { "@type": "Country", "name": "United Kingdom" },
+        { "@type": "Country", "name": "Canada" },
+        { "@type": "Country", "name": "Japan" },
+        { "@type": "Country", "name": "China" },
+        { "@type": "Country", "name": "Singapore" },
+        { "@type": "Country", "name": "Switzerland" },
+        { "@type": "Country", "name": "Germany" },
+        { "@type": "Country", "name": "Belgium" },
+        { "@type": "Country", "name": "Netherlands" },
+        { "@type": "Country", "name": "Spain" },
+        { "@type": "Country", "name": "Italy" }
+      ],
       "knowsAbout": [
-        "wine logistics", "freight forwarding", "wine export", "customs documentation",
-        "bonded warehousing", "temperature-controlled shipping", "excise documentation",
-        "GAMMA2", "EMCS", "DAE", "DAES", "BVE", "FDA Prior Notice", "GACC registration",
-        "EUR.1 certificate", "CMR", "wine B2B logistics", "wine DTC shipping"
-      ]
-    },
-    {
-      "@type": "Service",
-      "@id": "https://www.vastorg.com/#service",
-      "name": "European Wine Logistics & Freight Forwarding",
-      "provider": { "@id": "https://www.vastorg.com/#organization" },
-      "description": "End-to-end wine freight forwarding from European producers to importers, distributors and consumers worldwide. Services include customs documentation (DAE, DAES, BVE, CMR, FDA Prior Notice), bonded warehousing, temperature-controlled transport, and B2B and B2C delivery to 10+ markets.",
-      "serviceType": "Freight Forwarding",
-      "category": "Wine Logistics",
-      "areaServed": "Worldwide"
+        "wine logistics", "wine freight forwarding", "wine export from France",
+        "wine customs documentation", "bonded warehousing for wine",
+        "temperature-controlled wine transport", "excise documentation",
+        "GAMMA2 EMCS DAE", "DAES intra-EU wine movement",
+        "BVE Bordereau de Vente à l'Exportation",
+        "FDA Prior Notice wine USA", "TTB importer permit",
+        "GACC registration wine China", "EUR.1 certificate",
+        "CMR AWB transport documents", "wine B2B logistics",
+        "wine direct-to-consumer shipping", "wine import compliance"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Wine Logistics Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "B2B Wine Freight Forwarding", "description": "Commercial wine shipments from European producers to licensed importers, distributors and retailers worldwide." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "B2C Wine Direct-to-Consumer Shipping", "description": "Direct wine delivery to consumers in markets where regulations permit, including EU, UK, Switzerland, and Singapore." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wine Customs Documentation", "description": "Full management of DAE, DAES, BVE, FDA Prior Notice, GACC, EUR.1, CMR, AWB and all required export and import documents." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bonded Wine Warehousing", "description": "Storage of wine under duty suspension in EMCS-registered bonded warehouses, deferring excise payment until release for sale." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Temperature-Controlled Wine Transport", "description": "Climate-controlled logistics ensuring wine integrity from producer cellar to final destination." } }
+        ]
+      }
     },
     {
       "@type": "FAQPage",
@@ -80,7 +114,7 @@
           "name": "What is Vastorg?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Vastorg is a freight forwarding company specialised in European wine logistics. We handle shipping, customs documentation, and compliance for wine producers, négociants, and importers shipping from France and Europe to markets worldwide including the USA, UK, Canada, Japan, China, Singapore, and Switzerland."
+            "text": "Vastorg is a freight forwarding company specialised exclusively in European wine logistics. We handle shipping, customs documentation, excise compliance, and delivery for wine producers, négociants, and importers shipping from France and Europe to markets worldwide including the USA, UK, Canada, Japan, China, Singapore, and Switzerland."
           }
         },
         {
@@ -88,7 +122,7 @@
           "name": "Which countries does Vastorg ship wine to?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Vastorg ships wine to 10+ key markets including the United States, United Kingdom, Canada, Japan, China, Singapore, Switzerland, and throughout the European Union (Germany, Belgium, Netherlands, Spain, Italy, and more)."
+            "text": "Vastorg ships wine to 10+ key markets: United States, United Kingdom, Canada, Japan, China, Singapore, Switzerland, and throughout the European Union including Germany, Belgium, Netherlands, Spain, and Italy."
           }
         },
         {
@@ -96,7 +130,7 @@
           "name": "Does Vastorg handle both B2B and B2C wine shipments?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Vastorg handles both B2B (producer to importer, distributor, or retailer) and B2C (direct-to-consumer) wine shipments, including all required documentation for each channel."
+            "text": "Yes. Vastorg handles B2B (producer to importer, distributor, or retailer) and B2C (direct-to-consumer) wine shipments, including all required documentation and compliance for each channel and each destination market."
           }
         },
         {
@@ -104,15 +138,39 @@
           "name": "What wine shipping documents does Vastorg handle?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Vastorg manages all required wine shipping documentation including DAE (Document Administratif Electronique) via GAMMA2/EMCS, DAES for intra-EU duty-paid movements, BVE (Bordereau de Vente à l'Exportation), FDA Prior Notice for US shipments, GACC registration documents for China, EUR.1 certificates, CMR and AWB transport documents, and all customs declarations."
+            "text": "Vastorg manages: DAE (Document Administratif Electronique) via GAMMA2/EMCS for duty-suspended movements; DAES for intra-EU duty-paid B2B movements; BVE (Bordereau de Vente à l'Exportation) for all French wine exports; EX-A customs export declaration via DELTA; FDA Prior Notice and COLA for US shipments; GACC producer registration documents for China; EUR.1 certificates for preferential customs duty; CMR, AWB, and Bill of Lading transport documents."
           }
         },
         {
           "@type": "Question",
-          "name": "When will Vastorg launch?",
+          "name": "What documents are needed to ship wine from France to the USA?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Vastorg is launching soon with a select group of wine producers, négociants, and importers. Join the waitlist to get early access and dedicated onboarding."
+            "text": "Shipping French wine to the USA requires: a licensed TTB importer (mandatory under the three-tier system), FDA Prior Notice filed at least 24 hours before vessel arrival, a COLA (Certificate of Label Approval) per label via COLAs Online, DAE Export on GAMMA2, EX-A export declaration on DELTA, BVE, commercial invoice, packing list, and CMR or AWB. A 15% EU wine surcharge applies in 2025 in addition to federal excise of $0.21 per 750ml bottle."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can wine be shipped directly to consumers in the EU?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Intra-EU B2C wine shipping under the Vente à Distance regime requires only a standard commercial invoice — no DAES is needed. Couriers such as DHL and FedEx deliver directly to EU consumer addresses. If annual B2C EU sales exceed €10,000, OSS VAT registration applies and destination-country VAT rates must be charged."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is bonded warehousing for wine?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A bonded warehouse (entrepôt fiscal agréé) stores wine under excise duty suspension — taxes are not paid until the wine is released for sale. In France and the EU this is managed under EMCS via GAMMA2. Bonded storage allows wine to be held, blended, bottled, or re-exported without triggering immediate tax liability, making it essential for négociants and large-volume shippers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What makes wine logistics different from regular freight?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wine is a regulated product subject to excise duties, alcohol import licences, oenological standards, and market-specific label requirements. Each country has distinct rules — the US three-tier system requires a licensed TTB importer; China mandates GACC producer registration; Canada operates through provincial liquor board monopolies; Japan requires Japanese-language labels at time of customs inspection. Wine also requires temperature-controlled transport and specific excise documents (DAE, DAES, BVE) that general freight forwarders rarely handle."
           }
         }
       ]
@@ -295,6 +353,22 @@
         <div class="faq-item">
           <dt data-i18n="faq4_q">When are you launching?</dt>
           <dd data-i18n="faq4_a">We're launching soon with a select group of early partners. Join the waitlist to be among the first.</dd>
+        </div>
+        <div class="faq-item">
+          <dt data-i18n="faq5_q">What documents are needed to ship wine from France to the USA?</dt>
+          <dd data-i18n="faq5_a">You need a licensed TTB importer, FDA Prior Notice (≥24h before arrival), a COLA per label, DAE Export via GAMMA2, EX-A declaration via DELTA, BVE, commercial invoice, and CMR or AWB. A 15% EU surcharge applies in 2025 on top of federal excise of $0.21/bottle.</dd>
+        </div>
+        <div class="faq-item">
+          <dt data-i18n="faq6_q">Can wine be shipped directly to consumers in the EU?</dt>
+          <dd data-i18n="faq6_a">Yes. Intra-EU B2C (Vente à Distance) requires only a standard commercial invoice — no DAES needed. DHL and FedEx deliver to EU consumer addresses directly. OSS VAT registration applies if annual B2C EU sales exceed €10,000.</dd>
+        </div>
+        <div class="faq-item">
+          <dt data-i18n="faq7_q">What is bonded warehousing for wine?</dt>
+          <dd data-i18n="faq7_a">A bonded warehouse (entrepôt fiscal agréé) stores wine under duty suspension — excise is not paid until the wine is released for sale. Managed under EMCS via GAMMA2, it allows wine to be held, blended, or re-exported without immediate tax liability.</dd>
+        </div>
+        <div class="faq-item">
+          <dt data-i18n="faq8_q">What makes wine logistics different from regular freight?</dt>
+          <dd data-i18n="faq8_a">Wine is subject to excise duties, alcohol import licences, and market-specific label rules in every country. The US requires a TTB importer; China mandates GACC registration; Canada uses provincial monopolies. Wine also needs temperature control and specific excise documents (DAE, DAES, BVE) that most freight forwarders don't handle.</dd>
         </div>
       </dl>
     </div>
