@@ -254,6 +254,69 @@ const i18n = {
     faq4_q:        'Quando lancerete?',
     faq4_a:        'Lanciamo presto con un gruppo selezionato di partner. Unisciti alla lista per essere tra i primi.',
     msg_placeholder: 'Quali rotte ti interessano di più?',
+  },
+
+  pt: {
+    nav_cta:       'Entrar na lista',
+    hero_badge:    'Em breve',
+    hero_h1_pre:   'Logística de',
+    hero_h1_em:    'vinho',
+    hero_h1_mid:   'europeu,',
+    hero_h1_end:   'em qualquer lugar, sempre.',
+    hero_sub:      'Transporte de carga para produtores de vinho, négociants e importadores — de França para o mundo.',
+    hero_cta:      'Acesso antecipado',
+    stat_markets:  'Mercados-chave',
+    stat_b2c:      '& B2C',
+    stat_specialist: 'Especialista em vinho',
+    why_label:     'Porquê Vastorg',
+    why_title_pre: 'Criado para o',
+    why_title_em:  'vinho.',
+    why_title_end: 'Pensado para o mundo.',
+    why1_title:    'Documentação especializada',
+    why1_desc:     'Do DAE GAMMA2 ao FDA Prior Notice — cada documento, cada corredor, tratado por nós.',
+    why2_title:    'Expertise franco-suíça',
+    why2_desc:     'Nascido no coração vitícola da Europa. Bordéus, Borgonha e Basileia — conhecemos todas.',
+    why3_title:    'Logística completa',
+    why3_desc:     'Do produtor ao consumidor. Armazém aduaneiro. Cadeia de frio. Tratamos de tudo para que se concentre no vinho.',
+    wl_label:      'Acesso antecipado',
+    wl_h2_pre:     'Seja dos primeiros a enviar',
+    wl_h2_end:     'com Vastorg.',
+    wl_desc:       'Lançamos com um grupo selecionado de produtores, négociants e importadores. Reserve o seu lugar para acesso antecipado e onboarding dedicado.',
+    perk1:         'Acesso prioritário antes do lançamento',
+    perk2:         'Onboarding dedicado com a nossa equipa',
+    perk3:         'Preços preferenciais no lançamento',
+    perk4:         'Contribuição direta em rotas e funcionalidades',
+    wl_count_label:'na lista de espera',
+    field_name:    'Nome completo *',
+    field_email:   'Email *',
+    field_company: 'Empresa',
+    field_country: 'País',
+    field_role:    'A sua função',
+    field_msg:     'Mensagem',
+    optional:      '(opcional)',
+    role_select:   'Selecionar…',
+    role_producer: 'Produtor / Adega',
+    role_negociant:'Négociant / Comerciante',
+    role_importer: 'Importador',
+    role_distributor: 'Distribuidor',
+    role_other:    'Outro',
+    wl_submit:     'Entrar na lista de espera',
+    err_required:  'Por favor, preencha o seu nome e email.',
+    err_generic:   'Algo correu mal. Por favor, tente novamente.',
+    sending:       'A enviar…',
+    ok_greet:      'Bem-vindo, ',
+    ok_sub:        'Está na lista. Entraremos em contacto antes do lançamento.',
+    faq_label:     'FAQ',
+    faq_title:     'Perguntas frequentes',
+    faq1_q:        'O que faz a Vastorg?',
+    faq1_a:        'Gerimos o transporte de vinho de produtores europeus para mercados mundiais — tratando de toda a logística, documentação aduaneira e conformidade.',
+    faq2_q:        'Que mercados cobrem?',
+    faq2_a:        'EUA, Reino Unido, Canadá, Japão, China, Singapura, Suíça e toda a UE — mais de 10 mercados-chave em crescimento.',
+    faq3_q:        'Gerem envios B2C / diretos ao consumidor?',
+    faq3_a:        'Sim, onde a regulamentação o permite. Sabemos quais os mercados que permitem entrega direta ao consumidor e tratamos de todos os requisitos.',
+    faq4_q:        'Quando é o lançamento?',
+    faq4_a:        'Lançamos em breve com um grupo selecionado de parceiros. Junte-se à lista para ser dos primeiros.',
+    msg_placeholder: 'Quais as rotas que mais lhe interessam?',
   }
 };
 
@@ -263,7 +326,7 @@ let lang = 'en';
 function setLang(l) {
   lang = l;
   document.documentElement.lang = l;
-  ['en', 'fr', 'es', 'it'].forEach(code => {
+  ['en', 'fr', 'es', 'it', 'pt'].forEach(code => {
     document.getElementById('btn-' + code).classList.toggle('active', code === l);
   });
   const t = i18n[l];
