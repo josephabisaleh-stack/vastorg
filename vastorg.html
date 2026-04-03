@@ -378,8 +378,7 @@ footer{border-top:.5px solid var(--gold-d);padding:36px 40px}
    CONFIGURATION — replace with your Notion integration token
    See comments at top of <style> for setup instructions
    ======================================================== */
-const NOTION_TOKEN = 'YOUR_NOTION_INTEGRATION_TOKEN';
-const NOTION_DB    = '592a12b8ba78475b95c9298f33f6b588';
+/* Notion credentials are handled server-side via /api/waitlist */
 
 /* ── Language ─────────────────────────────────── */
 let lang = 'en';
@@ -423,20 +422,8 @@ async function submitWL(e) {
   errEl.style.display='none';
   if(!name||!email){errEl.textContent=lang==='en'?'Please fill in your name and email.':'Veuillez renseigner votre nom et email.';errEl.style.display='block';return;}
   btn.disabled=true; btxt.textContent=lang==='en'?'Sending…':'Envoi en cours…';
-  if(NOTION_TOKEN==='YOUR_NOTION_INTEGRATION_TOKEN'){setTimeout(()=>showOK(name),800);return;}
   try {
-    const body={parent:{database_id:NOTION_DB},properties:{
-      Name:{title:[{text:{content:name}}]},
-      Email:{email},
-      ...(co&&{Company:{rich_text:[{text:{content:co}}]}}),
-      ...(role&&{Role:{select:{name:role}}}),
-      ...(ctry&&{Country:{rich_text:[{text:{content:ctry}}]}}),
-      ...(msg&&{Message:{rich_text:[{text:{content:msg}}]}}),
-      Language:{select:{name:lang.toUpperCase()}},
-      Source:{select:{name:'Landing page'}},
-      Status:{select:{name:'New'}},
-    }};
-    const res=await fetch('https://api.notion.com/v1/pages',{method:'POST',headers:{'Authorization':'Bearer '+NOTION_TOKEN,'Notion-Version':'2022-06-28','Content-Type':'application/json'},body:JSON.stringify(body)});
+    const res=await fetch('/api/waitlist',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name,email,company:co,role,country:ctry,message:msg,language:lang})});
     if(!res.ok)throw new Error();
     showOK(name);
   } catch {

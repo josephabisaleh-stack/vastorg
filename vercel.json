@@ -1,7 +1,7 @@
 {
   "rewrites": [
     { "source": "/", "destination": "/vastorg.html" },
-    { "source": "/(.*)", "destination": "/vastorg.html" }
+    { "source": "/((?!api/).*)", "destination": "/vastorg.html" }
   ],
   "headers": [
     {
