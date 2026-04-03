@@ -4,17 +4,17 @@
 
 /* ── Variables ──────────────────────────────────────────────── */
 :root {
-  --gold:       #8B6914;
-  --gold-l:     #B8941A;
-  --text:       #1C1410;
-  --text-muted: #7A706A;
-  --bg:         #FFFFFF;
-  --bg-warm:    #FAF8F5;
-  --bg-section: #F4F0EA;
-  --border:     #E5DDD5;
+  --gold:       #3F72AF;
+  --gold-l:     #5A8CC5;
+  --text:       #112D4E;
+  --text-muted: #6B88AD;
+  --bg:         #F9F7F7;
+  --bg-warm:    #EEF2F8;
+  --bg-section: #DBE2EF;
+  --border:     #DBE2EF;
   --inner:      1100px;
   --r:          8px;
-  --shadow:     0 1px 3px rgba(0,0,0,0.06), 0 4px 20px rgba(0,0,0,0.05);
+  --shadow:     0 1px 3px rgba(17,45,78,0.07), 0 4px 20px rgba(17,45,78,0.06);
 }
 
 /* ── Reset ──────────────────────────────────────────────────── */
@@ -132,8 +132,8 @@ nav.scrolled {
 .hero-badge {
   font-size: 11px; font-weight: 500; letter-spacing: 2.5px;
   text-transform: uppercase; color: var(--gold);
-  background: rgba(139,105,20,0.08);
-  border: 1px solid rgba(139,105,20,0.22);
+  background: rgba(63,114,175,0.08);
+  border: 1px solid rgba(63,114,175,0.25);
   border-radius: 20px; padding: 5px 14px;
   margin-bottom: 28px;
   animation: fadeUp 0.7s 0.2s both;
