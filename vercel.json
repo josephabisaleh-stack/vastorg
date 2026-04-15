@@ -1,4 +1,12 @@
 {
+  "redirects": [
+    { "source": "/(.*)", "has": [{"type": "host", "value": "vastorg.fr"}],     "destination": "https://www.vastorg.com/$1", "permanent": true },
+    { "source": "/(.*)", "has": [{"type": "host", "value": "www.vastorg.fr"}], "destination": "https://www.vastorg.com/$1", "permanent": true },
+    { "source": "/(.*)", "has": [{"type": "host", "value": "vastorg.eu"}],     "destination": "https://www.vastorg.com/$1", "permanent": true },
+    { "source": "/(.*)", "has": [{"type": "host", "value": "www.vastorg.eu"}], "destination": "https://www.vastorg.com/$1", "permanent": true },
+    { "source": "/(.*)", "has": [{"type": "host", "value": "vastorg.ch"}],     "destination": "https://www.vastorg.com/$1", "permanent": true },
+    { "source": "/(.*)", "has": [{"type": "host", "value": "www.vastorg.ch"}], "destination": "https://www.vastorg.com/$1", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/guide",      "destination": "/guide/index.html" },
     { "source": "/guide/(.*)", "destination": "/guide/index.html" },
