@@ -5,7 +5,9 @@
 /* ── Translations ───────────────────────────────────────────── */
 const i18n = {
   en: {
-    nav_cta:       'Join the waitlist',
+    nav_cta:         'Join the waitlist',
+    nav_guide_main:  'Exclusive Shipping Guide',
+    nav_guide_sub:   '10 key destinations →',
     hero_badge:    'Coming soon',
     hero_h1_pre:   'European',
     hero_h1_em:    'wine',
@@ -74,10 +76,17 @@ const i18n = {
     faq8_q:        'What makes wine logistics different from regular freight?',
     faq8_a:        'Wine is subject to excise duties, alcohol import licences, and market-specific label rules in every country. The US requires a TTB importer; China mandates GACC registration; Canada uses provincial monopolies. Wine also needs temperature control and specific excise documents (DAE, DAES, BVE) that most freight forwarders don\'t handle.',
     msg_placeholder: 'Which routes matter most to you?',
+    guide_label:    'Free resource',
+    guide_title:    'Wine Shipping Guide — 10 markets, every process',
+    guide_desc:     'B2B and B2C workflows, courier rules, duties, and required documents for the USA, UK, Canada, Japan, China, Singapore and more.',
+    guide_cta:      'Read the guide',
+    footer_guide:   'Wine Shipping Guide',
   },
 
   fr: {
-    nav_cta:       'Rejoindre la liste',
+    nav_cta:         'Rejoindre la liste',
+    nav_guide_main:  'Guide d\'expédition exclusif',
+    nav_guide_sub:   '10 destinations clés →',
     hero_badge:    'Bientôt disponible',
     hero_h1_pre:   'La logistique du',
     hero_h1_em:    'vin',
@@ -146,10 +155,17 @@ const i18n = {
     faq8_q:        'En quoi la logistique viticole diffère-t-elle du fret standard ?',
     faq8_a:        'Le vin est soumis aux droits d\'accise, aux licences d\'importation d\'alcool et à des règles d\'étiquetage spécifiques à chaque pays. Les États-Unis imposent un importateur TTB ; la Chine exige l\'enregistrement GACC ; le Canada opère via des monopoles provinciaux. Le vin nécessite aussi un transport sous température dirigée et des documents d\'accise spécifiques (DAE, DAES, BVE) que la plupart des transitaires ne maîtrisent pas.',
     msg_placeholder: 'Quels corridors vous intéressent le plus ?',
+    guide_label:    'Ressource gratuite',
+    guide_title:    'Guide d\'expédition du vin — 10 marchés, chaque processus',
+    guide_desc:     'Processus B2B et B2C, règles courrier, droits et documents requis pour les États-Unis, le Royaume-Uni, le Canada, le Japon, la Chine, Singapour et plus encore.',
+    guide_cta:      'Lire le guide',
+    footer_guide:   'Guide d\'expédition du vin',
   },
 
   es: {
-    nav_cta:       'Unirse a la lista',
+    nav_cta:         'Unirse a la lista',
+    nav_guide_main:  'Guía de envío exclusiva',
+    nav_guide_sub:   '10 destinos clave →',
     hero_badge:    'Próximamente',
     hero_h1_pre:   'Logística de',
     hero_h1_em:    'vino',
@@ -218,10 +234,17 @@ const i18n = {
     faq8_q:        '¿En qué se diferencia la logística del vino del frete normal?',
     faq8_a:        'El vino está sujeto a impuestos especiales, licencias de importación de alcohol y requisitos de etiquetado específicos en cada país. EE.UU. exige un importador TTB; China requiere registro GACC; Canadá opera con monopolios provinciales. El vino también necesita transporte a temperatura controlada y documentos de accisa específicos (DAE, DAES, BVE) que la mayoría de transitarios no gestionan.',
     msg_placeholder: '¿Qué rutas son más importantes para ti?',
+    guide_label:    'Recurso gratuito',
+    guide_title:    'Guía de envío de vino — 10 mercados, cada proceso',
+    guide_desc:     'Procesos B2B y B2C, reglas de mensajería, aranceles y documentos para EE.UU., UK, Canadá, Japón, China, Singapur y más.',
+    guide_cta:      'Leer la guía',
+    footer_guide:   'Guía de envío de vino',
   },
 
   it: {
-    nav_cta:       'Unisciti alla lista',
+    nav_cta:         'Unisciti alla lista',
+    nav_guide_main:  'Guida spedizione esclusiva',
+    nav_guide_sub:   '10 destinazioni chiave →',
     hero_badge:    'Prossimamente',
     hero_h1_pre:   'Logistica del',
     hero_h1_em:    'vino',
@@ -290,10 +313,17 @@ const i18n = {
     faq8_q:        'Cosa rende la logistica del vino diversa dal normale trasporto merci?',
     faq8_a:        'Il vino è soggetto ad accise, licenze di importazione di alcolici e requisiti di etichettatura specifici per paese. Gli USA richiedono un importatore TTB; la Cina impone la registrazione GACC; il Canada opera con monopoli provinciali. Il vino richiede anche trasporto a temperatura controllata e documenti specifici (DAE, DAES, BVE) che la maggior parte degli spedizionieri non gestisce.',
     msg_placeholder: 'Quali rotte ti interessano di più?',
+    guide_label:    'Risorsa gratuita',
+    guide_title:    'Guida alla spedizione del vino — 10 mercati, ogni processo',
+    guide_desc:     'Flussi B2B e B2C, regole corrieri, dazi e documenti richiesti per USA, UK, Canada, Giappone, Cina, Singapore e altri.',
+    guide_cta:      'Leggi la guida',
+    footer_guide:   'Guida alla spedizione del vino',
   },
 
   pt: {
-    nav_cta:       'Entrar na lista',
+    nav_cta:         'Entrar na lista',
+    nav_guide_main:  'Guia de envio exclusivo',
+    nav_guide_sub:   '10 destinos principais →',
     hero_badge:    'Em breve',
     hero_h1_pre:   'Logística de',
     hero_h1_em:    'vinho',
@@ -362,6 +392,11 @@ const i18n = {
     faq8_q:        'O que distingue a logística do vinho do transporte normal de mercadorias?',
     faq8_a:        'O vinho está sujeito a impostos especiais, licenças de importação de álcool e requisitos de rotulagem específicos em cada país. Os EUA exigem um importador TTB; a China impõe registo GACC; o Canadá opera com monopólios provinciais. O vinho exige também transporte a temperatura controlada e documentos específicos (DAE, DAES, BVE) que a maioria dos transitários não domina.',
     msg_placeholder: 'Quais as rotas que mais lhe interessam?',
+    guide_label:    'Recurso gratuito',
+    guide_title:    'Guia de envio de vinho — 10 mercados, cada processo',
+    guide_desc:     'Fluxos B2B e B2C, regras de correio, direitos e documentos necessários para EUA, UK, Canadá, Japão, China, Singapura e mais.',
+    guide_cta:      'Ler o guia',
+    footer_guide:   'Guia de envio de vinho',
   }
 };
 

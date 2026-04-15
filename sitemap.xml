@@ -3,14 +3,23 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.vastorg.com/</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en"       href="https://www.vastorg.com/"/>
-    <xhtml:link rel="alternate" hreflang="fr"       href="https://www.vastorg.com/?lang=fr"/>
-    <xhtml:link rel="alternate" hreflang="es"       href="https://www.vastorg.com/?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="it"       href="https://www.vastorg.com/?lang=it"/>
-    <xhtml:link rel="alternate" hreflang="pt"       href="https://www.vastorg.com/?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.vastorg.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.vastorg.com/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://www.vastorg.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="it"        href="https://www.vastorg.com/?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="pt"        href="https://www.vastorg.com/?lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vastorg.com/"/>
+  </url>
+  <url>
+    <loc>https://www.vastorg.com/guide</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.vastorg.com/guide"/>
+    <xhtml:link rel="alternate" hreflang="fr"        href="https://www.vastorg.com/guide?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vastorg.com/guide"/>
   </url>
 </urlset>

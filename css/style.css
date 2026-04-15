@@ -67,6 +67,34 @@ nav.scrolled {
 }
 .nav-logo span { color: var(--gold); }
 .nav-r { display: flex; align-items: center; gap: 14px; }
+.nav-guide {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 2px;
+  padding: 7px 14px;
+  background: rgba(63,114,175,0.07);
+  border: 1px solid rgba(63,114,175,0.18);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.18s, border-color 0.18s, box-shadow 0.18s, transform 0.18s;
+  line-height: 1.25;
+}
+.nav-guide:hover {
+  background: rgba(63,114,175,0.13);
+  border-color: rgba(63,114,175,0.32);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(63,114,175,0.12);
+}
+.nav-guide.active {
+  background: rgba(63,114,175,0.12);
+  border-color: rgba(63,114,175,0.3);
+}
+.nav-guide-main {
+  font-size: 12px; font-weight: 600;
+  color: var(--text); letter-spacing: 0.1px;
+}
+.nav-guide-sub {
+  font-size: 10px; font-weight: 400;
+  color: var(--gold); letter-spacing: 0.2px;
+}
 
 .lang-tog {
   display: flex; gap: 2px;
@@ -320,6 +348,35 @@ nav.scrolled {
   line-height: 1.7; font-weight: 300;
 }
 
+/* ── Guide CTA ──────────────────────────────────────────────── */
+.guide-cta {
+  margin-top: 48px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 36px;
+  box-shadow: var(--shadow);
+}
+.guide-cta-inner {
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 32px;
+  flex-wrap: wrap;
+}
+.guide-cta h3 {
+  font-size: 20px; font-weight: 400;
+  color: var(--text); margin-bottom: 8px; margin-top: 8px;
+}
+.guide-cta p:not(.section-label) {
+  font-size: 14px; color: var(--text-muted);
+  font-weight: 300; line-height: 1.6;
+  max-width: 540px;
+}
+.guide-cta .cta-primary {
+  padding: 13px 28px; font-size: 14px;
+  white-space: nowrap; flex-shrink: 0;
+  text-decoration: none;
+}
+
 /* ── FOOTER ─────────────────────────────────────────────────── */
 footer { border-top: 1px solid var(--border); padding: 28px 24px; }
 .footer-inner {
@@ -333,6 +390,12 @@ footer { border-top: 1px solid var(--border); padding: 28px 24px; }
   text-transform: uppercase; color: var(--text-muted);
 }
 .footer-copy { font-size: 12px; color: var(--text-muted); }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a {
+  font-size: 12px; color: var(--text-muted);
+  text-decoration: none; transition: color 0.15s;
+}
+.footer-links a:hover { color: var(--gold); }
 
 /* ── Animations ─────────────────────────────────────────────── */
 @keyframes fadeUp {
@@ -351,6 +414,8 @@ footer { border-top: 1px solid var(--border); padding: 28px 24px; }
   .nav-cta { display: none; }
   .nav-inner { padding: 14px 20px; }
   .lang-tog .lb { padding: 4px 8px; }
+  .nav-guide-sub { display: none; }
+  .nav-guide { padding: 6px 12px; }
 
   #hero { min-height: auto; padding: 100px 20px 60px; }
   .hero-stats { gap: 20px; }

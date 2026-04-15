@@ -1,0 +1,12 @@
+{
+  "name": "vastorg",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node dev.js 3000",
+    "start": "node dev.js 3000"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

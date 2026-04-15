@@ -13,6 +13,7 @@
 <meta name="geo.region" content="FR">
 <meta name="geo.placename" content="France">
 <meta name="theme-color" content="#3F72AF">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="canonical" href="https://www.vastorg.com/">
 
 <!-- hreflang -->
@@ -59,7 +60,15 @@
       "name": "Vastorg",
       "description": "European wine logistics and freight forwarding — from Europe to the world",
       "publisher": { "@id": "https://www.vastorg.com/#organization" },
-      "inLanguage": ["en","fr","es","it","pt"]
+      "inLanguage": ["en","fr","es","it","pt"],
+      "hasPart": {
+        "@type": "TechArticle",
+        "@id": "https://www.vastorg.com/guide#article",
+        "name": "Wine Shipping Guide — 10 Key Markets",
+        "url": "https://www.vastorg.com/guide",
+        "description": "Complete wine freight forwarding reference: B2B and B2C processes, courier rules, duties and documents for USA, UK, Canada, Japan, China, Singapore, Germany, Netherlands, Switzerland and Belgium.",
+        "inLanguage": ["en","fr"]
+      }
     },
     {
       "@type": "Organization",
@@ -185,6 +194,10 @@
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="Vastorg home">V<span>·</span>ASTORG</a>
     <div class="nav-r">
+      <a href="/guide" class="nav-guide">
+        <span class="nav-guide-main" data-i18n="nav_guide_main">Exclusive Shipping Guide</span>
+        <span class="nav-guide-sub" data-i18n="nav_guide_sub">10 key destinations →</span>
+      </a>
       <div class="lang-tog" role="navigation" aria-label="Language selector">
         <button class="lb active" onclick="setLang('en')" id="btn-en" aria-label="English">EN</button>
         <button class="lb" onclick="setLang('fr')" id="btn-fr" aria-label="Français">FR</button>
@@ -372,6 +385,18 @@
           <dd data-i18n="faq8_a">Wine is subject to excise duties, alcohol import licences, and market-specific label rules in every country. The US requires a TTB importer; China mandates GACC registration; Canada uses provincial monopolies. Wine also needs temperature control and specific excise documents (DAE, DAES, BVE) that most freight forwarders don't handle.</dd>
         </div>
       </dl>
+
+      <div class="guide-cta reveal">
+        <div class="guide-cta-inner">
+          <div>
+            <p class="section-label" data-i18n="guide_label">Free resource</p>
+            <h3 data-i18n="guide_title">Wine Shipping Guide — 10 markets, every process</h3>
+            <p data-i18n="guide_desc">B2B and B2C workflows, courier rules, duties, and required documents for the USA, UK, Canada, Japan, China, Singapore and more.</p>
+          </div>
+          <a href="/guide" class="cta-primary" data-i18n="guide_cta">Read the guide</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -380,6 +405,9 @@
 <footer>
   <div class="footer-inner">
     <span class="footer-logo">V · A · S · T · O · R · G</span>
+    <div class="footer-links">
+      <a href="/guide" data-i18n="footer_guide">Wine Shipping Guide</a>
+    </div>
     <span class="footer-copy" id="footer-copy"></span>
   </div>
 </footer>
