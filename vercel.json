@@ -1,6 +1,8 @@
 {
   "rewrites": [
-    { "source": "/((?!api/|guide($|/)).*)", "destination": "/index.html" }
+    { "source": "/guide",      "destination": "/guide/index.html" },
+    { "source": "/guide/(.*)", "destination": "/guide/index.html" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
   "headers": [
     {
